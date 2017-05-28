@@ -6,7 +6,7 @@ body {
     background: white;
     color: #393939;
     line-height: 2em;
-    font-family: 'Open Sans';
+    font-family: 'Raleway', sans-serif;
     font-size: 18px;
 }
 
@@ -17,6 +17,10 @@ a, a:hover {
 
 p {
   margin-bottom: 0.5em;
+}
+
+li {
+    line-height: 2em;
 }
 
 section {
@@ -47,7 +51,7 @@ section {
 }
 
 .uppercase-style {
-    font-family: 'Museo Sans';
+    font-family: 'Museo Sans', sans-serif;
     text-transform: uppercase;
     font-size: 16px;
     letter-spacing: 2px;
@@ -130,7 +134,6 @@ h6 {
 
 h1, h2, h3, h4 {
     vertical-align: bottom;
-    font-family: 'Open Sans';
     font-size: 40px;
     margin-bottom: 20px;
     line-height: 1.2em;
@@ -165,4 +168,28 @@ h4 {
 footer {
     margin-top: 30px;
     font-size: 14px;
+}
+
+.talk-proposal-landing {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.talk-proposal-landing a{
+    color: #f9bf3b;
+}
+
+.more-info-soon{width:100%;border:3px dashed #ededed;-moz-box-sizing:border-box;box-sizing:border-box; margin-top: 10px;}
+.more-info-soon p{text-align:center;color:#cdcdcd;margin:0;font-weight:700;font-size:28px;line-height:54px}
+
+#about strong {
+    background-color: #3498DB;
+    font-size: 12px;
+    color: white;
+    padding: 3px 5px;
+}
+
+.partner-logo {
+    margin: 0 25px 20px 0;
+    height: 60px;
 }
