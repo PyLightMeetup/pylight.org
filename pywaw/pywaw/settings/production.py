@@ -1,20 +1,12 @@
 from .base import *
+import dj_database_url
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, '../../media')
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': get_env_var('DB_NAME'),
-        'USER': get_env_var('DB_USER'),
-        'PASSWORD': get_env_var('DB_PASSWORD'),
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+DATABASES = {'default': dj_database_url.config()}
 
 EMAIL_HOST = get_env_var('EMAIL_HOST')
 EMAIL_PORT = int(get_env_var('EMAIL_PORT'))
