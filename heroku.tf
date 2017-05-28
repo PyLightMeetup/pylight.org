@@ -59,6 +59,18 @@ resource "heroku_pipeline_coupling" "production" {
   stage    = "production"
 }
 
+resource "heroku_domain" "production" {
+  app      = "${heroku_app.pylight-prod.name}"
+  hostname = "www.pylight.org"
+}
 
+resource "heroku_domain" "production-root" {
+  app      = "${heroku_app.pylight-prod.name}"
+  hostname = "pylight.org"
+}
 
+resource "heroku_domain" "staging" {
+  app      = "${heroku_app.pylight-staging.name}"
+  hostname = "staging.pylight.org"
+}
 
