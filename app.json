@@ -1,0 +1,21 @@
+{
+  "name": "pylight.org",
+  "scripts": {},
+  "env": {
+    "DJANGO_SETTINGS_MODULE": {
+      "required": true
+    },
+    "WEB_CONCURRENCY": {
+      "required": true
+    }
+  },
+  "formation": {},
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
