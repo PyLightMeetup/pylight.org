@@ -11,7 +11,12 @@
       "required": true
     }
   },
-  "formation": {},
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
   "addons": [
     "heroku-postgresql"
   ],
