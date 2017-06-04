@@ -1,3 +1,13 @@
+
+terraform {
+  backend "gcs" {
+    bucket  = "pylight-terraform-state"
+    path    = "heroku/terraform.tfstate"
+    project = "pylight-169718"
+  }
+}
+
+
 provider "heroku" {
   email   = "heroku@wuub.net"
 }
