@@ -9,4 +9,4 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, '../../media')
 
 DATABASES = {'default': dj_database_url.config()}
 
-ALLOWED_HOSTS += ['pylight-staging.herokuapp.com']
+ALLOWED_HOSTS += ['.herokuapp.com']

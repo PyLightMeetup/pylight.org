@@ -1,6 +1,8 @@
 {
   "name": "pylight.org",
-  "scripts": {},
+  "scripts": {
+    "postdeploy": "sh -c 'python pywaw/manage.py syncdb --noinput; python pywaw/manage.py migrate --noinput;'"
+  },
   "env": {
     "DJANGO_SETTINGS_MODULE": {
       "required": true
@@ -9,7 +11,12 @@
       "required": true
     }
   },
-  "formation": {},
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
   "addons": [
     "heroku-postgresql"
   ],
