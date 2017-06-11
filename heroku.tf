@@ -20,6 +20,10 @@ resource "heroku_app" "pylight-prod" {
   config_vars {
     DJANGO_SETTINGS_MODULE = "pywaw.settings.production"
     WEB_CONCURRENCY = "2"
+    EMAIL_HOST = "smtp.sendgrid.net"
+    EMAIL_PORT = "587"
+    EMAIL_USE_TLS = "true"
+    EMAIL_HOST_USER = "pylight-prod-heroku"
   }
 
   buildpacks = [
