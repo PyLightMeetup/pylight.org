@@ -1,14 +1,17 @@
 from .base import *
 
-DEBUG = True
+# we need explicit DEBUG=true
+DEBUG = get_env_var("DEBUG", default="false") == "true"
 TEMPLATE_DEBUG = DEBUG
 
-MEDIA_ROOT = os.path.join(LOCAL_STATIC_ROOT, 'upload')
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, '../upload')
+
+DB_PATH = os.path.join(PROJECT_ROOT, "../sqlite.db")
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '../sqlite.db',
+        'NAME': DB_PATH,
     }
 }
 

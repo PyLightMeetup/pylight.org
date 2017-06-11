@@ -21,7 +21,7 @@ MANAGERS = ADMINS
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['.pylight.org', '127.0.0.1']
+ALLOWED_HOSTS = ['.pylight.org', '127.0.0.1', 'localhost']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -48,7 +48,7 @@ USE_TZ = False
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_ROOT, '../../static')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, '../staticfiles')
 LOCAL_STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 # URL prefix for static files.
@@ -167,4 +167,4 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
 
 MEETUP_NAME = 'PyWaw'
 
-TALK_PROPOSAL_RECIPIENTS = ['info@pywaw.org']
+TALK_PROPOSAL_RECIPIENTS = ['hello@pylight.org']
