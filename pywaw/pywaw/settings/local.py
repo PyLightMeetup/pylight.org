@@ -1,7 +1,7 @@
 from .base import *
 
 # we need explicit DEBUG=true
-DEBUG = get_env_var("DEBUG", default="false") == "true"
+DEBUG = get_env_var("DEBUG", default="false").lower() in ("1", "true", "on")
 TEMPLATE_DEBUG = DEBUG
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, '../upload')
