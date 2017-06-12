@@ -1,1 +1,1 @@
-web: gunicorn --chdir pywaw pywaw.wsgi:application
+web: gunicorn --chdir pylight pylight.wsgi:application

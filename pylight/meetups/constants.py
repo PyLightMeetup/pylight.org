@@ -1,2 +1,2 @@
-FEED_TITLE = 'PyWaw - Warsaw Python Users Group'
+FEED_TITLE = 'PyLight'
 EITHER_EXISTING_OR_NEW_SPEAKER_ERROR = 'Wybierz prelegenta z listy lub wprowadź dane dla nowego.'

@@ -107,10 +107,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'pywaw.urls'
+ROOT_URLCONF = 'pylight.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'pywaw.wsgi.application'
+WSGI_APPLICATION = 'pylight.wsgi.application'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'templates'),
@@ -165,6 +165,6 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'meetups.context_processors.stats',
 )
 
-MEETUP_NAME = 'PyWaw'
+MEETUP_NAME = 'PyLight'
 
 TALK_PROPOSAL_RECIPIENTS = ['hello@pylight.org']
