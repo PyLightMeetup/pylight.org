@@ -7,6 +7,9 @@
     "DJANGO_SETTINGS_MODULE": {
       "required": true
     },
+    "SECRET_KEY": {
+      "required": true
+    },
     "WEB_CONCURRENCY": {
       "required": true
     }
