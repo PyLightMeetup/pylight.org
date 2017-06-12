@@ -18,7 +18,7 @@ resource "heroku_app" "pylight-prod" {
   region = "eu"
 
   config_vars {
-    DJANGO_SETTINGS_MODULE = "pywaw.settings.production"
+    DJANGO_SETTINGS_MODULE = "pylight.settings.production"
     WEB_CONCURRENCY = "2"
     EMAIL_HOST = "smtp.sendgrid.net"
     EMAIL_PORT = "587"
@@ -42,7 +42,7 @@ resource "heroku_app" "pylight-staging" {
   region = "eu"
 
   config_vars {
-    DJANGO_SETTINGS_MODULE = "pywaw.settings.staging"
+    DJANGO_SETTINGS_MODULE = "pylight.settings.staging"
     WEB_CONCURRENCY = "2"
   }
 
