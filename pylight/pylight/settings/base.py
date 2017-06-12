@@ -65,6 +65,7 @@ SPEAKER_PHOTOS_DIR = 'speakers'
 SLIDES_FILES_DIR = 'slides'
 PARTNER_LOGOS_DIR = 'partners'
 
+DEFAULT_FILE_STORAGE = 'dbstorage.storage.DBStorage'
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
@@ -117,6 +118,7 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    'dbstorage',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
