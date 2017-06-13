@@ -1,0 +1,20 @@
+* text=auto
+
+*.ai binary
+*.pdf binary
+
+*.jpg binary
+*.png binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.mov binary
+*.mp4 binary
+*.mp3 binary
+*.flv binary
+*.fla binary
+*.swf binary
+*.gz binary
+*.zip binary
+*.7z binary
+*.ttf binary
