@@ -3,16 +3,66 @@ html {
 }
 
 body {
-    background: white;
+    background: #fff;
     color: #393939;
     line-height: 2em;
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
 }
 
-a, a:hover {
-    color: #3498DB;
-    text-decoration: none !important;
+/* UNDERLINED LINK WHEN HOVERED */
+a, a:visited, a:hover, a:active {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: relative;
+    transition: 0.5s color ease;
+    text-decoration: none;
+    color: #393939;
+    font-size: 20px;
+}
+
+h1 a, h1 a:hover {
+    font-size: 45px;
+}
+
+a:hover {
+    color: #f9bf3b;
+}
+
+a.after:after {
+    left: 0;
+}
+
+a.button.button-block.margin-top-normal.more {
+    font-size: 15px;
+}
+
+/* UNDERLINED AND VERTICAL BARS LINK STYLES */
+
+a.after:after {
+    bottom: -0.25em;
+}
+
+a.before:before, a.after:after {
+    content: "";
+    transition: 0.5s all ease;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+a.before:before, a.after:after {
+    height: 5px;
+    height: 0.35rem;
+    width: 0;
+}
+
+a.before:hover:before, a.after:hover:after {
+    width: 100%;
 }
 
 p {
@@ -28,12 +78,14 @@ section {
     margin-bottom: 40px;
 }
 
+/* BACKGROUND IMAGES */
 @media screen and (min-width: 768px) {
   #left-fixed-shape {
       background: url(../img/main-left.png) no-repeat;
       width: 250px;
       height: 275px;
       position: fixed;
+      left: -40px;
       bottom: 10px;
       z-index: -1;
       }
@@ -63,10 +115,6 @@ aside {
     width: 23%;
     text-align: center;
     line-height: 35px;
-}
-
-aside p {
-    color: #1BA39C;
 }
 
 aside .logo {
@@ -109,22 +157,66 @@ nav ul {
     margin: 0;
 }
 
-nav ul li {
-    line-height: inherit;
+/* NAV DECORATION */
+a.before:before {
+    top: -0.25em;
 }
 
-nav ul li  a {
-    color: #3498DB;
-    font-weight: bold;
-    text-decoration: none;
+.vertical-bars {
+    box-sizing: border-box;
+    margin-left: -0.4em;
+    position: relative;
+    overflow: hidden;
 }
 
-nav ul li a:hover {
-    color: #f9bf3b;
+.vertical-bars a {
+    position: static;
+    padding: 0.2em 0.4em;
+}
+
+.vertical-bars:before, .vertical-bars:after {
+    content: "";
+    box-sizing: border-box;
+    transition: 0.2s all ease;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    background: #f9bf3b;
+}
+
+.vertical-bars:before {
+    left: 0;
+    bottom: -0.2em;
+}
+
+.vertical-bars:after {
+    right: 0;
+    top: -0.2em;
+}
+
+.vertical-bars a:before{
+    left: 0;
+    transition: 0.2s all ease;
+}
+
+.vertical-bars a:after{
+    right: 0;
+    transition: 0.2s all ease;
+}
+
+.vertical-bars:hover:before, .vertical-bars:hover:after {
+    height: calc(100% + 0.4em);
+}
+
+.vertical-bars:hover a:before, .vertical-bars:hover a:after{
+    width: 100%;
 }
 
 h6 {
-    color: #1BA39C;
     text-transform: uppercase;
     font-size: 16px;
     letter-spacing: 2px;
@@ -144,30 +236,40 @@ h1, h2, h3, h4 img {
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 45px;
 }
 
 h2 {
-    margin-top: 40px;
+    margin-top: 35px;
 }
 
 h3 {
-    font-size: 30px;
+    font-size: 25px;
     margin: 40px 0 15px 0;
 }
 
 h4 {
-    font-size: 26px;
+    font-size: 20px;
     margin: 30px 0 10px 0;
+}
+
+h5 {
+    font-size: 20px;
 }
 
 .content {
     margin-top: 50px;
+    padding-top: 5px;
+    padding-left: 10px;
 }
 
-footer {
+footer, footer a, footer a:hover {
     margin-top: 30px;
     font-size: 14px;
+}
+
+footer a:hover {
+    font-weight: bold;
 }
 
 .talk-proposal-landing {
@@ -175,7 +277,12 @@ footer {
     text-align: center;
 }
 
-.talk-proposal-landing a{
+.talk-proposal-landing a {
+    color: #393939;
+    font-weight: bold;
+}
+
+.talk-proposal-landing a:hover {
     color: #f9bf3b;
 }
 
