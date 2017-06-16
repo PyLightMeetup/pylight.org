@@ -5,34 +5,36 @@
 {% block og_title %}Spotkania{% endblock %}
 
 {% block subcontent %}
-<h1>Spotkania</h1>
-{% for meetup in object_list %}
-<div class="margin-bottom-big meeting-list" itemscope itemtype="http://schema.org/Event">
-    <div class="row">
-        <div class="span10 list-caption">
-            <div class="pull-right">
-                <div class="span2">
-                    <h4 class="date-small" itemprop="startDate" content="{{ meetup.date|date:"c" }}">{{ meetup.date|date:"d.m.Y" }}</h4>
+<div class="content">
+    <h1>Spotkania</h1>
+    {% for meetup in object_list %}
+    <div class="" itemscope itemtype="http://schema.org/Event">
+        <div class="row">
+            <div class="list-caption">
+                <div class="pull-right">
+                    <div class="span2">
+                        <h4 class="date-small" itemprop="startDate" content="{{ meetup.date|date:"c" }}">{{ meetup.date|date:"d.m.Y" }}</h4>
+                    </div>
+                    <div class="pull-right">
+                        <a href="{% url 'meetups:meetup_detail' number=meetup.number %}" class="button button-block span3">SZCZEGÓŁY</a>
+                    </div>
                 </div>
-                <div class="span2">
-                    <a href="{% url 'meetups:meetup_detail' number=meetup.number %}" class="button button-block">SZCZEGÓŁY</a>
-                </div>
+                <h2><a href="{% url 'meetups:meetup_detail' number=meetup.number %}" itemprop="sameAs"><span itemprop="name">{{ meetup }}</span></a></h2>
             </div>
-            <h2><a href="{% url 'meetups:meetup_detail' number=meetup.number %}" itemprop="sameAs"><span itemprop="name">{{ meetup }}</span></a></h2>
         </div>
+        <ul class="unstyled">
+            {% for talk in meetup.talks.all %}
+            <li itemprop="subEvent" itemscope itemtype="http://schema.org/Event">
+                {% for speaker in talk.speakers.all %}<strong itemprop="performer" itemscope itemtype="http://schema.org/Person"><a href="{{ meetup.get_absolute_url }}#speaker-{{ speaker|slugify }}" target="_blank" itemprop="name">{{ speaker }}</a>{% if not forloop.last %}, {% endif %}</strong>{% endfor %}: <a href="{{ meetup.get_absolute_url }}#talk-{{ talk.title|slugify }}" itemprop="name">{{ talk.title }}</a>
+            </li>
+            {% endfor %}
+            {% if not meetup.is_ready %}
+            <div class="more-info">
+                <h3>agenda w przygotowaniu</h3>
+            </div>
+            {% endif %}
+        </ul>
     </div>
-    <ul class="unstyled">
-        {% for talk in meetup.talks.all %}
-        <li itemprop="subEvent" itemscope itemtype="http://schema.org/Event">
-            {% for speaker in talk.speakers.all %}<strong itemprop="performer" itemscope itemtype="http://schema.org/Person"><a href="{{ meetup.get_absolute_url }}#speaker-{{ speaker|slugify }}" target="_blank" itemprop="name">{{ speaker }}</a>{% if not forloop.last %}, {% endif %}</strong>{% endfor %}: <a href="{{ meetup.get_absolute_url }}#talk-{{ talk.title|slugify }}" itemprop="name">{{ talk.title }}</a>
-        </li>
-        {% endfor %}
-        {% if not meetup.is_ready %}
-        <div class="more-info">
-            <h3>agenda w przygotowaniu</h3>
-        </div>
-        {% endif %}
-    </ul>
 </div>
 {% endfor %}
 {% endblock %}

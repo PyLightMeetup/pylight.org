@@ -39,6 +39,18 @@ a.button.button-block.margin-top-normal.more {
     font-size: 15px;
 }
 
+.row {
+    width: 100%;
+}
+
+div.media.meetup-talk {
+    margin: 30px 0;
+}
+
+a.button.button-block.span3 {
+    text-align: right;
+}
+
 /* UNDERLINED AND VERTICAL BARS LINK STYLES */
 
 a.after:after {
@@ -226,7 +238,7 @@ h6 {
 
 h1, h2, h3, h4 {
     vertical-align: bottom;
-    font-size: 35px;
+    font-size: 40px;
     margin-bottom: 20px;
     line-height: 1.2em;
 }
@@ -245,7 +257,7 @@ h2 {
 
 h3 {
     font-size: 25px;
-    margin: 40px 0 15px 0;
+    margin: 15px 0 15px 0;
 }
 
 h4 {
@@ -287,7 +299,7 @@ footer a:hover {
 }
 
 .more-info-soon{width:100%;border:3px dashed #ededed;-moz-box-sizing:border-box;box-sizing:border-box; margin-top: 10px;}
-.more-info-soon p{text-align:center;color:#cdcdcd;margin:0;font-weight:700;font-size:28px;line-height:54px}
+.more-info-soon p{text-align:center;color:#ababab;margin:0;font-weight:700;font-size:28px;line-height:54px}
 
 #about strong {
     background-color: #3498DB;
