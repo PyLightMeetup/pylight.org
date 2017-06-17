@@ -1,0 +1,76 @@
+[
+    {
+        "pk": 1,
+        "model": "meetups.venue",
+        "fields": {
+            "name": "Atlantyda",
+            "address": "Pod morzem 1/1",
+            "longitude": "21.010258",
+            "latitude": "52.224403"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "meetups.sponsor",
+        "fields": {
+            "name": "Sunscrapers",
+            "website": "http://sunscrapers.com/",
+            "logo": "pylight/static/img/sunscrapers.png",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate."
+        }
+    },
+    {
+        "pk": 1,
+        "model": "meetups.meetup",
+        "fields": {
+            "number": 1,
+            "date": "2027-06-26T18:30:00",
+            "sponsors": ["1"],
+            "venue": 1,
+            "is_ready": true,
+            "date_modified": "2017-06-18T00:30:00"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "meetups.speaker",
+        "fields": {
+            "first_name": "Ananiasz",
+            "last_name": "Babasz",
+            "website": "https://www.abc.com",
+            "biography": "One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections."
+        }
+    },
+    {
+        "pk": 2,
+        "model": "meetups.speaker",
+        "fields": {
+            "first_name": "John",
+            "last_name": "Doe",
+            "website": "http://test.com/",
+            "biography": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+        }
+    },
+    {
+        "pk": 1,
+        "model": "meetups.talk",
+        "fields": {
+            "title": "Not so serious talk about baboons",
+            "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+            "speakers": ["1"],
+            "meetup": 1,
+            "order": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "meetups.talk",
+        "fields": {
+            "title": "Very serious talk",
+            "description": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.",
+            "speakers": ["2"],
+            "meetup": 1,
+            "order": 2
+        }
+    }
+]
