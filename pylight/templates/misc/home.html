@@ -7,7 +7,7 @@
 {% block content %}
 <section id="upcoming-meetup">
     {% if upcoming_meetup %}
-    <h1><a href="{{ upcoming_meetup.get_absolute_url }}">Następne spotkanie {{ upcoming_meetup }}</a></h1>
+    <h1><a class="after" href="{{ upcoming_meetup.get_absolute_url }}">Następne spotkanie {{ upcoming_meetup }}</a></h1>
     <div class="row">
         <div class="span5 offset2">
             <h4 class="date"><span class="day">{{ upcoming_meetup.date|date:"l" }}, </span>{{ upcoming_meetup.date|date:"d.m.Y" }} <span class="pull-right"><i class="icon-clock"></i> {{ upcoming_meetup.date|date:"H:i" }}</span></h4>
@@ -27,22 +27,22 @@
             {% for talk in upcoming_meetup.talks.all %}
             <div class="row">
                 <div class="span1">
-                	{% if talk.speakers.count == 1 %}
-                	<img src="{% if talk.speakers.get.photo %}{{ talk.speakers.get.photo.url }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="Zdjęcie {{ speaker }}" class="img-user">
-                	{% else %}
-                	<div class="carousel slide" id="myCarousel">
-                		<div class="carousel-inner">
-	                    {% for speaker in talk.speakers.all %}
-	                    <img src="{% if speaker.photo %}{{ speaker.photo.url }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="Zdjęcie {{ speaker }}" class="img-user item">
-	                    {% endfor %}
-	                    </div>
-	                </div>
+                    {% if talk.speakers.count == 1 %}
+                    <img src="{% if talk.speakers.get.photo %}{{ talk.speakers.get.photo.url }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="Zdjęcie {{ speaker }}" class="img-user">
+                    {% else %}
+                    <div class="carousel slide" id="myCarousel">
+                        <div class="carousel-inner">
+                        {% for speaker in talk.speakers.all %}
+                        <img src="{% if speaker.photo %}{{ speaker.photo.url }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="Zdjęcie {{ speaker }}" class="img-user item">
+                        {% endfor %}
+                        </div>
+                    </div>
                     {% endif %}
                 </div>
-                <div class="span4 link-grey">
+                <div class="span4">
                     <h5>
                     {% for speaker in talk.speakers.all %}
-                        <a class="link-grey" href="{{ upcoming_meetup.get_absolute_url }}#speaker-{{ speaker|slugify }}">{{ speaker }}</a>{% if not forloop.last %}, {% endif %}
+                        <a href="{{ upcoming_meetup.get_absolute_url }}#speaker-{{ speaker|slugify }}">{{ speaker }}</a>{% if not forloop.last %}, {% endif %}
                     {% endfor %}
                     </h5>
                     <p class="text-smaller"><a href="{{ upcoming_meetup.get_absolute_url }}#talk-{{ talk|slugify }}">{{ talk.title }}</a></p>
@@ -51,7 +51,7 @@
             {% endfor %}
             {% if not upcoming_meetup.is_ready %}
             <div class="more-info">
-            	<h3>agenda w przygotowaniu</h3>
+                <h3>agenda w przygotowaniu</h3>
             </div>
             {% endif %}
         </div>
