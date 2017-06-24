@@ -36,15 +36,15 @@
 
 {% block content %}
 <div class="content" itemscope itemtype="http://schema.org/Event">
-    <div class="row">
-        <h1 itemprop="name">{{ object }}</h1>
-        <div class="more-info-soon">
-            <p class="date" itemprop="startDate" content="{{ meetup.date|date:"c" }}"><span class="day">{{ meetup.date|date:"l" }}, </span>{{ meetup.date|date:"d.m.Y" }} <i class="icon-clock"></i> {{ meetup.date|date:"H:i" }}</p>
+    <div>
+        <div class="pull-right">
+            <a href="{% url 'meetups:meetup_list' %}" class="button button-block span3 highlighted-link"> &laquo; LISTA SPOTKAŃ</a>
+        </div>
+        <div>
+            <h1 itemprop="name">{{ object }}</h1>
+            <p class="date strong" itemprop="startDate" content="{{ meetup.date|date:"c" }}"><span class="day">{{ meetup.date|date:"l" }}, </span>{{ meetup.date|date:"d.m.Y" }} <i class="icon-clock"></i> {{ meetup.date|date:"H:i" }}</p>
         </div>
     </div>
-        <div class="pull-right">
-            <a href="{% url 'meetups:meetup_list' %}" class="button button-block span3"> &laquo; LISTA SPOTKAŃ</a>
-        </div>
     <div class="row">
         <div>
             {% for talk in meetup.talks.all %}
@@ -55,13 +55,13 @@
                         <a href="#speaker-{{ speaker|slugify }}">{{ speaker }}</a>{% if not forloop.last %}, {% endif %}
                         {% endfor %}
                     </h5>
-                    <h3>
+                    <h5>
 	                    <span itemprop="name">{{ talk.title }}</span>
 	                    <span class="lang-icon"><img src="{% get_static_prefix %}img/languages/{{ talk.language }}.png"</span>
                         {% if talk.slides_url or talk.slides_file %}
 	                    <a href="{% if talk.slides_url %}{{ talk.slides_url }}{% else %}{{ talk.slides_file.url }}{% endif %}" target="_blank"><img src="{% static 'img/download.png' %}" alt="Link do prezentacji"></a>
                         {% endif %}
-                    </h3>
+                    </h5>
                     <p itemprop="description">{{ talk.description }}</p>
                 </div>
                 {% if talk.video_url %}
@@ -80,7 +80,7 @@
         </div>
     </div>
     <div class="row">
-        <h2>Prelegenci</h2>
+        <h3>Prelegenci</h3>
         {% for talk in meetup.talks.all %}
         {% for speaker in talk.speakers.all %}
         <div class="media" id="speaker-{{ speaker|slugify }}" itemprop="performer" itemscope itemtype="http://schema.org/Person">
