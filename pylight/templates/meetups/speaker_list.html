@@ -7,20 +7,21 @@
 {% block og_title %}Prelegenci{% endblock %}
 
 {% block subcontent %}
-    <div class="margin-bottom-large">
+    <div class="margin-bottom-large speaker-list">
     <h1>Prelegenci</h1>
         <div class="row">
-            <div class="media speaker-list">
+            <div class="media">
                 <ul>
                     {% for speaker in object_list %}
-                    <li id="speaker-{{ speaker.id }}">
+                    <li id="speaker-{{ speaker.id }}" class="speaker-li">
                         <div class="pull-left img-user-container hidden-phone">
                             <img  src="{% if speaker.photo %}{{ speaker.photo.url }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="Zdjecie {{ speaker }}" class="img-user"><br>
                         </div>
                         <div class="media-body">
-                            <h3>{{ speaker.first_name }} {{ speaker.last_name }}</h3>
-                            {% if speaker.website %}<a href="{{ speaker.website }}" target="_blank" class="link-gray"><img src="{% static 'img/link.png' %}" alt="Strona prelegenta" class="speaker-link"></a>{% endif %}
-                            <p>{{ speaker.biography }}</p>
+                            <h3 class="speaker-name">{{ speaker.first_name }} {{ speaker.last_name }}</h3>
+                            {% if speaker.website %}
+                            <a href="{{ speaker.website }}" target="_blank" class="link-gray"><img src="{% static 'img/link.png' %}" alt="Strona prelegenta" class="speaker-link"></a>{% endif %}
+                            <p class="span8 speaker-bio">{{ speaker.biography }}</p>
                         </div>
                         <div class="clearfix"></div>
                     </li>
