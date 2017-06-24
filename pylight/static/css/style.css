@@ -1,11 +1,3 @@
-/*reset CSS*/
-/** {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  list-style: none;
-}*/
-
 /*styles*/
 
 html {
@@ -352,33 +344,6 @@ footer a:hover {
     height: 60px;
 }
 
-/* style dla podstrony Spotkania*/
-
-h1 span {
-  font-weight: normal;
-  letter-spacing: 0.1px;
-}
-
-.content.meetupList {
-  margin-top: 0;
-  padding-left: 0;
-}
-
-.content.meetupList h1, .singleMeetupOnList {
-  margin-left: 30px;
-}
-
-.singleMeetupOnList {
-  margin-top: 60px;
-}
-
-.singleMeetupOnList .date-small {
-  margin: 0;
-  padding-left: 80px;
-  height: 36px;
-  line-height: 36px;
-}
-
 p.date.strong {
     background-color: #f9bf3b;
     color: #393939;
@@ -387,12 +352,116 @@ p.date.strong {
     line-height: 17px;
 }
 
+/*flexbox classes*/
+
+.flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.space-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.justify-content-end {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.align-items-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.align-items-end {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+/*templates common styles*/
+
+.content.meetupList h1, .speaker-list h1 {
+  margin-bottom: 60px;
+}
+
+/*meetup list template*/
+
+.content.meetupList {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.content.meetupList h1 span {
+  font-weight: normal;
+  letter-spacing: 0.1px;
+}
+
+.singleMeetupOnList {
+  margin-top: 30px;
+}
+
+.singleMeetupOnList .list-caption {
+  height: 36px;
+  padding-bottom: 20px;
+}
+
+.singleMeetupOnList h2, .singleMeetupOnList .date-small {
+  margin: 0;
+  vertical-align: middle;
+  line-height: 36px;
+  font-size: 20px;
+}
+
 .singleMeetupOnList h2 div {
   display: flex;
   align-items: center;
   height: 36px;
 }
 
-.singleMeetupOnList .pull-right a.details, a.meetupTitle {
+.singleMeetupOnList a.details-a, a.meetupTitle {
   color: #f9bf3b;
+}
+
+.singleMeetupOnList .talks-ul {
+  margin-bottom: 0;
+}
+
+.singleMeetupOnList hr {
+  margin-top: 20px;
+  border-color: transparent transparent #ccc;
+}
+
+.singleMeetupOnList:last-child hr {
+  visibility: hidden;
+}
+
+/*speaker list template*/
+
+.speaker-list ul {
+  margin-left: 0;
+}
+
+.speaker-list .img-user {
+  width: 64px;
+  height: auto;
+}
+
+.speaker-list .speaker-name  {
+  display: inline-block;
+  padding-left: 20px;
+}
+
+.speaker-list .speaker-link {
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+.speaker-list .speaker-li {
+  margin-bottom: 20px;
 }

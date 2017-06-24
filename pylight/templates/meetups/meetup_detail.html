@@ -69,7 +69,7 @@
                     {% video talk.video_url '780x440' %}
                   </div>
                 {% endif %}
-                
+
             </div>
             {% endfor %}
             {% if not meetup.is_ready %}
@@ -104,7 +104,7 @@
         <div class="span2 img-tip">
             <img src="{% static 'img/links.png' %}" alt="Linki">
         </div>
-        <div class="span10">
+        <div class="span8">
             <h2>Linki</h2>
             <ul>
                 {% for external_link in object.external_links.all %}
