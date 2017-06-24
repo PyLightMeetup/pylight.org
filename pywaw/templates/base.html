@@ -1,0 +1,65 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}PyLight{% endblock %}</title>
+
+        <meta name="description" content="PyLight to cykliczne spotkania entuzjastów języka programowania Python.">
+        <meta name="keywords" content="programming, python, django, pylight">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta property="og:title" content="PyLight" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="PyLight to cykliczne spotkania entuzjastów języka programowania Python." />
+        <meta property="og:url" content="https://www.pylight.org/" />
+        <meta property="og:image" content="{% static 'img/logo.png' %}" />
+
+        <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}" />
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap-responsive.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+        <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Lora:400,700,400i,700i">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    </head>
+    <body>
+        <div id="left-fixed-shape"></div>
+        {% block right_shape %}<div id="right-absolute-home-shape"></div>{% endblock %}
+        <div class="container">
+            <aside class="uppercase-style">
+              <a href="{% url 'misc:home' %}">
+                  <img src="{% static 'img/logo.png' %}" alt="PyLight" class="logo" />
+              </a>
+                <nav>
+                    <ul>
+                        <li><a href="{% url 'misc:home' %}">Home</a></li>
+                        <li><a href="{% url 'meetups:meetup_list' %}">Spotkania</a></li>
+{#                        <li><a href="{% url 'meetups:speaker_list' %}">Prelegenci</a></li>#}
+{#                        <li><a href="{% url 'meetups:sponsor_list' %}">Sponsorzy</a></li>#}
+                        <li><a href="{% url 'misc:faq' %}">FAQ</a></li>
+                  </ul>
+                </nav>
+            </aside>
+            <main>
+
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="{{ message.tags }}">
+                            {{ message }}
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <div class="content">
+                    {% block content %}{% endblock %}
+                </div>
+                <div class="cls"></div>
+                <footer>
+                    <p>Społeczność PyLight zobowiązuje się przestrzegać <a href="http://berlincodeofconduct.org/pl/">berlińskiego kodeksu postępowania</a>.</p>
+                </footer>
+            </main>
+        </div>
+        <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    </body>
+</html>

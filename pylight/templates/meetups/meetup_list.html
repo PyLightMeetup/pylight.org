@@ -5,21 +5,27 @@
 {% block og_title %}Spotkania{% endblock %}
 
 {% block subcontent %}
-<div class="content">
-    <h1>Spotkania</h1>
+<div class="content meetupList">
+    <h1>Spotkania <span>Py</span>Light<span>waw</span></h1>
     {% for meetup in object_list %}
-    <div class="" itemscope itemtype="http://schema.org/Event">
-        <div class="row">
+    <div class="singleMeetupOnList" itemscope itemtype="http://schema.org/Event">
+        <div>
             <div class="list-caption">
                 <div class="pull-right">
                     <div class="span2">
                         <h4 class="date-small" itemprop="startDate" content="{{ meetup.date|date:"c" }}">{{ meetup.date|date:"d.m.Y" }}</h4>
                     </div>
                     <div class="pull-right">
-                        <a href="{% url 'meetups:meetup_detail' number=meetup.number %}" class="button button-block span3">SZCZEGÓŁY</a>
+                        <a href="{% url 'meetups:meetup_detail' number=meetup.number %}" class="button button-block span3 details">SZCZEGÓŁY &raquo;</a>
                     </div>
                 </div>
-                <h2><a href="{% url 'meetups:meetup_detail' number=meetup.number %}" itemprop="sameAs"><span itemprop="name">{{ meetup }}</span></a></h2>
+                <h2>
+                  <div>
+                    <a href="{% url 'meetups:meetup_detail' number=meetup.number %}" itemprop="sameAs" class="meetupTitle">
+                      <span itemprop="name">{{ meetup }}</span>
+                    </a>
+                  </div>
+                </h2>
             </div>
         </div>
         <ul class="unstyled">

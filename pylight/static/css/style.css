@@ -1,3 +1,13 @@
+/*reset CSS*/
+/** {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+}*/
+
+/*styles*/
+
 html {
     overflow-x: hidden;
 }
@@ -311,4 +321,41 @@ footer a:hover {
 .partner-logo {
     margin: 0 25px 20px 0;
     height: 60px;
+}
+
+/* style dla podstrony Spotkania*/
+
+h1 span {
+  font-weight: normal;
+  letter-spacing: 0.1px;
+}
+
+.content.meetupList {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.content.meetupList h1, .singleMeetupOnList {
+  margin-left: 30px;
+}
+
+.singleMeetupOnList {
+  margin-top: 60px;
+}
+
+.singleMeetupOnList .date-small {
+  margin: 0;
+  padding-left: 80px;
+  height: 36px;
+  line-height: 36px;
+}
+
+.singleMeetupOnList h2 div {
+  display: flex;
+  align-items: center;
+  height: 36px;
+}
+
+.singleMeetupOnList .pull-right a.details, a.meetupTitle {
+  color: #f9bf3b;
 }
