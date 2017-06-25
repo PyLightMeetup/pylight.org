@@ -1,11 +1,3 @@
-/*reset CSS*/
-/** {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  list-style: none;
-}*/
-
 /*styles*/
 
 html {
@@ -13,7 +5,7 @@ html {
 }
 
 body {
-    background: white;
+    background: #fff;
     color: #393939;
     line-height: 2em;
     font-family: 'Raleway', sans-serif;
@@ -41,24 +33,26 @@ a:hover {
     color: #f9bf3b;
 }
 
-a.after:after {
-    left: 0;
+a.highlighted-link, a.highlighted-link:visited, a.active {
+  color: #f9bf3b;
 }
 
-a.button.button-block.margin-top-normal.more {
-    font-size: 15px;
+a.highlighted-link:hover {
+  color: #393939;
+}
+
+a.after:after {
+  left: 0;
 }
 
 .row {
-    width: 100%;
-}
-
-div.media.meetup-talk {
-    margin: 30px 0;
+  width: 100%;
+  margin-left: 0;
 }
 
 a.button.button-block.span3 {
-    text-align: right;
+  text-align: right;
+  padding: 5px;
 }
 
 /* UNDERLINED AND VERTICAL BARS LINK STYLES */
@@ -141,7 +135,7 @@ aside {
 
 aside .logo {
     max-width: 90%;
-    margin-top: 30px;
+    margin-top: 45px;
     text-align: center;
 }
 
@@ -323,12 +317,29 @@ footer a:hover {
     height: 60px;
 }
 
+p.date.strong {
+    background-color: #f9bf3b;
+    color: #393939;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 17px;
+}
+
+div.media.meetup-talk {
+  margin: 30px 0;
+}
+
 /*flexbox classes*/
 
 .flexbox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .space-between {
@@ -343,6 +354,12 @@ footer a:hover {
   justify-content: flex-end;
 }
 
+.justify-content-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .align-items-center {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -355,6 +372,13 @@ footer a:hover {
   align-items: flex-end;
 }
 
+.align-items-between {
+  -webkit-box-align: space-between;
+  -ms-flex-align: space-between;
+  align-items: space-between;
+}
+
+/*templates common styles*/
 /*style wspólne dla podstron*/
 
 .content.meetupList h1, .speaker-list h1 {
@@ -387,6 +411,12 @@ footer a:hover {
   vertical-align: middle;
   line-height: 36px;
   font-size: 20px;
+}
+
+.singleMeetupOnList h2 div {
+  display: flex;
+  align-items: center;
+  height: 36px;
 }
 
 .singleMeetupOnList a.details-a, a.meetupTitle {
@@ -433,4 +463,149 @@ footer a:hover {
 
 .speaker-list .speaker-li {
   margin-bottom: 20px;
+}
+
+/*home - upcoming meetup styles*/
+
+.upcoming-meetup {
+  margin-top: 0;
+  border: 2px solid black;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.upcoming-meetup h1 {
+  margin-right: 0;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .upcoming-meetup h1 {
+    font-size: 32px;
+  }
+}
+
+.upcoming-meetup .box-time-location {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+a.more {
+  color: #3498DB;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  a.more {
+      font-size: 18px;
+  }
+}
+
+a.more:hover {
+  color: #393939;
+}
+
+.upcoming-meetup .date-time-venue-wrapper {
+  display: inline-block;
+  width: 50%;
+  min-width: 200px;
+}
+
+.upcoming-meetup .date-time-venue-wrapper h4,
+.upcoming-meetup .date-time-venue-wrapper h5 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.upcoming-meetup .map-wrapper {
+  display: inline-block;
+  margin-right: 15px;
+  width: 45%;
+  min-width: 200px;
+}
+
+@media screen and (max-width: 524px) {
+  .upcoming-meetup .map-wrapper {
+    margin-bottom: 20px;
+  }
+}
+
+.upcoming-meetup .map-wrapper .map {
+  vertical-align: top;
+}
+
+div.box-users {
+  margin-bottom: 20px;
+}
+
+div.box-users .row {
+  display: inline-block;
+  box-sizing: border-box;
+  padding-right: 15px;
+  width: 50%;
+  min-width: 220px;
+}
+
+@media screen and (max-width: 532px) {
+  div.box-users .row {
+    margin-bottom: 20px;
+  }
+}
+
+.upcoming-meetup .box-users .speaker-imgs {
+  width: 100%;
+}
+
+.upcoming-meetup .box-users .speaker-imgs .img-user {
+  display: inline-block;
+  padding-right: 10px;
+  width: auto;
+  height: 64px;
+}
+
+.upcoming-meetup .box-users .speaker-imgs,
+.upcoming-meetup .box-users .speaker-names,
+.upcoming-meetup .sponsors {
+  margin-left: 0;
+}
+
+.upcoming-meetup .box-users .speaker-names h5 {
+  margin-bottom: 0;
+}
+
+.upcoming-meetup .box-users .speaker-names a {
+  font-size: 16px;
+}
+
+.upcoming-meetup .sponsors {
+  margin-top: 20px;
+}
+
+.upcoming-meetup .sponsors * {
+  display: inline-block;
+}
+
+.upcoming-meetup .sponsors .text-sponsors {
+  margin: 0;
+  padding-right: 15px;
+  vertical-align: top;
+  font-size: 16px;
+}
+
+.upcoming-meetup .sponsors .sponsor-logo {
+  margin-bottom: 20px;
+  padding-right: 15px;
+  width: auto;
+  height: 64px;
+}
+
+.upcoming-meetup .talk-proposal-landing {
+  margin: 0 0 15px;
+}
+
+.upcoming-meetup .talk-proposal-landing,
+.upcoming-meetup .talk-proposal-landing a {
+  font-size: 16px;
 }
