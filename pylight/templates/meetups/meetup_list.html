@@ -11,7 +11,7 @@
   <div class="singleMeetupOnList" itemscope itemtype="http://schema.org/Event">
     <div class="list-caption flexbox space-between">
       <h2>
-        <a href="{% url 'meetups:meetup_detail' number=meetup.number %}" itemprop="sameAs" class="meetupTitle">
+        <a href="{% url 'meetups:meetup_detail' number=meetup.number %}" itemprop="sameAs" class="highlighted-link">
           <span itemprop="name">{{ meetup }}</span>
         </a>
       </h2>
@@ -32,7 +32,7 @@
       </ul>
     </div>
     <div class="details-div flexbox justify-content-end align-items-end">
-      <a href="{% url 'meetups:meetup_detail' number=meetup.number %}" class="button button-block span3 details-a">SZCZEGÓŁY &raquo;</a>
+      <a href="{% url 'meetups:meetup_detail' number=meetup.number %}" class="button button-block span3 highlighted-link">SZCZEGÓŁY &raquo;</a>
     </div>
     <hr/>
   </div>
