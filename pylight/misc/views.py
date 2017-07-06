@@ -13,6 +13,8 @@ class HomeView(generic.TemplateView):
         except meetups_models.Meetup.DoesNotExist:
             context['upcoming_meetup'] = None
         context['partners'] = models.Partner.objects.filter(is_public=True)
+        context['sponsors'] = meetups_models.Sponsor.objects.all()
+        print(context)
         return context
 
 

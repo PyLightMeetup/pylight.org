@@ -1,99 +1,27 @@
 {% extends "base.html" %}
 
-{% load staticfiles %}
+{% load staticfiles logos %}
 
-{% block title %}PyLight{% endblock %}
 
 {% block content %}
-<section id="upcoming-meetup" class="upcoming-meetup">
+
+<section id="upcoming-meetup">
   {% if upcoming_meetup %}
-  <h1>
-    <a class="after highlighted-link" href="{{ upcoming_meetup.get_absolute_url }}">
-      Następne spotkanie {{ upcoming_meetup }}
-    </a>
-  </h1>
-  <div class="row">
-    <div class="box-time-location flexbox space-between flex-wrap">
-      <div class="map-wrapper">
-        <a href="https://maps.google.com/maps?q={{ upcoming_meetup.venue.latitude }},{{ upcoming_meetup.venue.longitude }}" target="_blank">
-          <img src="http://maps.googleapis.com/maps/api/staticmap?zoom=15&amp;size=460x189&amp;maptype=roadmap&amp;markers=color:blue%7C{{ upcoming_meetup.venue.latitude }},{{ upcoming_meetup.venue.longitude }}&amp;sensor=false&amp;key=AIzaSyBmPw3YAF_Qk3GTLbj2zkF-M-rIcT45y2Q" class="map" alt="Mapa">
-        </a>
-      </div>
-      <div class="date-time-venue-wrapper flexbox align-items-between">
-        <h4 class="date">
-          {{ upcoming_meetup.date|date:"l" }},
-          {{ upcoming_meetup.date|date:"d.m.Y" }}, godz. {{ upcoming_meetup.date|date:"H:i" }}
-        </h4>
-        {% if upcoming_meetup.venue %}
-        <h5 class="location">
-          <img src="{% static 'img/location.png' %}" alt="Lokalizacja" class="icon-location-home"> {{ upcoming_meetup.venue.name }}, {{ upcoming_meetup.venue.address }}
-        </h5>
-        <div class='more-wrapper'>
-          <a href="{{ upcoming_meetup.get_absolute_url }}" class="more">WIĘCEJ INFORMACJI &raquo;</a>
-        </div>
-      </div>
-      {% endif %}
-    </div>
-    <div class="box-users flexbox space-between flex-wrap">
-      {% for talk in upcoming_meetup.talks.all %}
-      <div class="row">
-        <div class="span2 speaker-imgs">
-          {% if talk.speakers.count == 1 %}
-          <img src="{% if talk.speakers.get.photo %}{{ talk.speakers.get.photo.url }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="Zdjęcie {{ speaker }}" class="img-user">
-          {% else %}
-          <div class="img-div many-speakers">
-          {% for speaker in talk.speakers.all %}
-            <img src="{% if speaker.photo %}{{ speaker.photo.url }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="Zdjęcie {{ speaker }}" class="img-user">
-          {% endfor %}
-          </div>
-          {% endif %}
-        </div>
-        <div class="span4 speaker-names">
-          <h5>
-          {% for speaker in talk.speakers.all %}
-            <a href="{{ upcoming_meetup.get_absolute_url }}#speaker-{{ speaker|slugify }}">{{ speaker }}</a>{% if not forloop.last %}, {% endif %}
-          {% endfor %}
-          </h5>
-          <a href="{{ upcoming_meetup.get_absolute_url }}#talk-{{ talk|slugify }}">{{ talk.title }}</a>
-        </div>
-      </div>
-      {% endfor %}
-      {% if not upcoming_meetup.is_ready %}
-      <div class="more-info">
-        <h3>agenda w przygotowaniu</h3>
-      </div>
-      {% endif %}
-    </div>
-  </div>
-  {% if upcoming_meetup.sponsors.exists %}
-  <div class="row">
-    <div class="sponsors">
-      <h3 class="text-sponsors">SPONSORZY:</h3>
-      <div>
-      {% for sponsor in upcoming_meetup.sponsors.all %}
-        <a href="{{ sponsor.website }}" target="_blank" class="no-hover">
-            <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" class="sponsor-logo">
-        </a>
-      {% if forloop.counter|divisibleby:4 %}{% endif %}
-      {% endfor %}
-      </div>
-    </div>
-  </div>
-  {% endif %}
+      {%  include 'misc/_meetup.html' %}
   {% else %}
   <h1>Następne spotkanie</h1>
-  <div class="more-info-soon">
+  <div id="more-info-soon">
     <p>spotkanie w przygotowaniu</p>
   </div>
   {% endif %}
+</section>
 
-  <div class="talk-proposal-landing">
+<section id="talk-proposal-landing">
     <p>Chcesz wystąpić na kolejnym PyLight? <a href="mailto:hello@pylight.org">Zgłoś się już teraz!</a></p>
-  </div>
 </section>
 
 <section id="about">
-  <h1>O Pylight</h1>
+  <h2>O PyLight</h2>
   <div class="about-pl">
     <p><strong>PL</strong> PyLight to inicjatywa nastawiona na początkujące programistki i początkujących programistów. Na naszych spotkaniach skupiamy się na zrozumieniu podstawowych założeń programowania, kreatywnym rozwiązywaniu problemów i pokazaniu różnych możliwości rozwoju w IT. Nasze spotkania, w formie nauki przez działanie, odbywają się raz w miesiącu. Przyjdźcie i przekonajcie się sami!</p>
   </div>
@@ -102,12 +30,35 @@
   </div>
 </section>
 
+<section id="sponsors">
+  <h2>Sponsorzy</h2>
+
+  {% for chunk in sponsors|chunkify:2 %}
+    <div class="row vertical-center">
+    {% for sponsor in chunk %}
+        <div class="sponsor col-md-6">
+            <a href="{{ sponsor.website }}" target="_blank">
+                <img class="logo" src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}">
+            </a>
+        </div>
+    {% endfor %}
+    </div>
+  {% endfor %}
+</section>
+
 <section id="partners">
-  <h1>Partnerzy</h1>
-  {% for partner in partners %}
-    <a href="{{ partner.url }}" title="{{ partner.name }}" class="no-hover" target="_blank">
-      <img class="partner-logo" src="{{ partner.logo.url }}" alt="{{ partner.name }}">
-    </a>
+  <h2>Partnerzy</h2>
+
+  {% for chunk in partners|chunkify:3 %}
+    <div class="row vertical-center">
+    {% for partner in chunk %}
+        <div class="sponsor col-md-3">
+            <a href="{{ partner.url }}" target="_blank">
+                <img class="logo" src="{{ partner.logo.url }}" alt="{{ partner.name }}" title="{{ partner.name }}">
+            </a>
+        </div>
+    {% endfor %}
+    </div>
   {% endfor %}
 </section>
 

@@ -1,602 +1,307 @@
-/*styles*/
-
+@import url("https://fonts.googleapis.com/css?family=Raleway&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Lora:400i&subset=latin-ext");
 html {
-    overflow-x: hidden;
-}
+  overflow-x: hidden; }
 
 body {
-    background: #fff;
-    color: #393939;
-    line-height: 2em;
-    font-family: 'Raleway', sans-serif;
-    font-size: 18px;
-}
+  background: #ffffff;
+  color: #393939;
+  line-height: 2em;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px; }
 
-/* UNDERLINED LINK WHEN HOVERED */
-a, a:visited, a:hover, a:active {
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
-    position: relative;
-    transition: 0.5s color ease;
-    text-decoration: none;
-    color: #393939;
-    font-size: 20px;
-}
-
-h1 a, h1 a:hover {
-    font-size: 45px;
-}
+a {
+  color: #3498DB;
+  transition: 0.5s color ease; }
 
 a:hover {
-    color: #f9bf3b;
-}
-
-a.highlighted-link, a.highlighted-link:visited, a.active {
   color: #f9bf3b;
-}
+  text-decoration: none; }
 
-a.highlighted-link:hover {
-  color: #393939;
-}
+h1, h2, h3, h4, h5 {
+  font-family: "Lora", serif; }
 
-a.after:after {
-  left: 0;
-}
+h1, h2 {
+  font-size: 45px; }
 
-.row {
-  width: 100%;
-  margin-left: 0;
-}
-
-a.button.button-block.span3 {
-  text-align: right;
-  padding: 5px;
-}
-
-/* UNDERLINED AND VERTICAL BARS LINK STYLES */
-
-a.after:after {
-    bottom: -0.25em;
-}
-
-a.before:before, a.after:after {
-    content: "";
-    transition: 0.5s all ease;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
-    position: absolute;
-}
-
-a.before:before, a.after:after {
-    height: 5px;
-    height: 0.35rem;
-    width: 0;
-}
-
-a.before:hover:before, a.after:hover:after {
-    width: 100%;
-}
-
-p {
-  margin-bottom: 0.5em;
-}
-
-li {
-    line-height: 2em;
-}
-
-section {
-    margin-top: 30px;
-    margin-bottom: 40px;
-}
-
-/* BACKGROUND IMAGES */
-@media screen and (min-width: 768px) {
-  #left-fixed-shape {
-      background: url(../img/main-left.png) no-repeat;
-      width: 250px;
-      height: 275px;
-      position: fixed;
-      left: -40px;
-      bottom: 10px;
-      z-index: -1;
-      }
-}
-
-@media screen and (min-width: 1000px) {
-  #right-absolute-home-shape {
-      background: url(../img/main-right.png) no-repeat;
-      width: 356px;
-      height: 200px;
-      position: absolute;
-      top: 100%;
-      right: -200px;
-    }
-}
-
-.uppercase-style {
-    font-family: 'Museo Sans', sans-serif;
-    text-transform: uppercase;
-    font-size: 16px;
-    letter-spacing: 2px;
-    font-weight: bold;
-}
-
-aside {
-    float: left;
-    width: 23%;
-    text-align: center;
-    line-height: 35px;
-}
-
-aside .logo {
-    max-width: 90%;
-    margin-top: 45px;
-    text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-    aside {
-        position: relative;
-        width: 100%;
-        margin-bottom: 50px;
-        z-index: 1;
-    }
-
-    aside .logo {
-        max-width: 200px;
-    }
-}
-
-main {
-    position: relative;
-    margin-left: 25%;
-}
-
-@media screen and (max-width: 768px) {
-    main {
-        margin-left: 0;
-    }
-}
-
-nav {
-    margin-top: 15px;
-}
-
-nav ul {
-    list-style-type: none;
-    padding-left: 0;
-    margin: 0;
-}
-
-/* NAV DECORATION */
-a.before:before {
-    top: -0.25em;
-}
-
-.vertical-bars {
-    box-sizing: border-box;
-    margin-left: -0.4em;
-    position: relative;
-    overflow: hidden;
-}
-
-.vertical-bars a {
-    position: static;
-    padding: 0.2em 0.4em;
-}
-
-.vertical-bars:before, .vertical-bars:after {
-    content: "";
-    box-sizing: border-box;
-    transition: 0.2s all ease;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
-    position: absolute;
-    width: 0.1rem;
-    height: 0.1rem;
-    background: #f9bf3b;
-}
-
-.vertical-bars:before {
-    left: 0;
-    bottom: -0.2em;
-}
-
-.vertical-bars:after {
-  right: 0;
-  top: -0.2em;
-}
-
-.vertical-bars a:before{
-  left: 0;
-  transition: 0.2s all ease;
-}
-
-.vertical-bars a:after{
-  right: 0;
-  transition: 0.2s all ease;
-}
-
-.vertical-bars:hover:before, .vertical-bars:hover:after {
-  height: calc(100% + 0.4em);
-}
-
-.vertical-bars:hover a:before, .vertical-bars:hover a:after{
-  width: 100%;
-}
+h3 {
+  font-size: 18px; }
 
 h6 {
   text-transform: uppercase;
   font-size: 16px;
   letter-spacing: 2px;
   font-weight: bold;
-  margin-top: 25px;
-}
+  margin-top: 25px; }
 
-h1, h2, h3, h4 {
-  vertical-align: bottom;
-  font-size: 40px;
-  margin-bottom: 20px;
-  line-height: 1.2em;
-}
-
-h1, h2, h3, h4 img {
-  margin-right: 15px;
-}
-
-h1 {
-  font-size: 45px;
-}
-
-h2 {
-  margin-top: 35px;
-}
-
-h3 {
-  font-size: 25px;
-  margin: 15px 0;
-}
-
-h4 {
-  font-size: 20px;
-  margin: 30px 0 10px 0;
-}
-
-h5 {
-  font-size: 20px;
-}
-
-.content {
-    margin-top: 50px;
-    padding-top: 5px;
-    padding-left: 10px;
-}
-
-footer, footer a, footer a:hover {
-    margin-top: 30px;
-    font-size: 14px;
-}
-
-footer a:hover {
-    font-weight: bold;
-}
-
-.talk-proposal-landing {
-    margin-top: 25px;
-    text-align: center;
-}
-
-.talk-proposal-landing a {
-    color: #393939;
-    font-weight: bold;
-}
-
-.talk-proposal-landing a:hover {
-    color: #f9bf3b;
-}
-
-.more-info-soon{width:100%;border:3px dashed #ededed;-moz-box-sizing:border-box;box-sizing:border-box; margin-top: 10px;}
-.more-info-soon p{text-align:center;color:#ababab;margin:0;font-weight:700;font-size:28px;line-height:54px}
-
-#about strong, p.date.strong {
-    background-color: #3498DB;
-    font-size: 12px;
-    color: white;
-    padding: 3px 5px;
-}
-
-.partner-logo {
-    margin: 0 25px 20px 0;
-    height: 60px;
-}
-
-p.date.strong {
+p {
+  margin-bottom: 0.5em; }
+  p .date.strong {
     background-color: #f9bf3b;
     color: #393939;
     font-weight: bold;
     font-size: 15px;
     line-height: 17px;
-}
+    padding: 3px 5px; }
 
-div.media.meetup-talk {
-  margin: 30px 0;
-}
-
-/*flexbox classes*/
-
-.flexbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.flex-wrap {
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.space-between {
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.justify-content-end {
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.justify-content-center {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.align-items-center {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.align-items-end {
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
-}
-
-.align-items-between {
-  -webkit-box-align: space-between;
-  -ms-flex-align: space-between;
-  align-items: space-between;
-}
-
-/*templates common styles*/
-
-.content.meetupList h1, .speaker-list h1 {
-  margin-bottom: 60px;
-}
-
-/*meetup list template*/
-
-.content.meetupList {
-  margin-top: 0;
-  padding-left: 0;
-}
-
-.content.meetupList h1 span {
-  font-weight: normal;
-  letter-spacing: 0.1px;
-}
-
-.singleMeetupOnList {
-  margin-top: 30px;
-}
-
-.singleMeetupOnList .list-caption {
-  height: 36px;
-  padding-bottom: 20px;
-}
-
-.singleMeetupOnList h2, .singleMeetupOnList .date-small {
-  margin: 0;
-  vertical-align: middle;
-  line-height: 36px;
-  font-size: 20px;
-}
-
-.singleMeetupOnList h2 div {
-  display: flex;
-  align-items: center;
-  height: 36px;
-}
-
-.singleMeetupOnList .talks-ul {
-  margin-bottom: 0;
-}
-
-.singleMeetupOnList hr {
-  margin-top: 20px;
-  border-color: transparent transparent #ccc;
-}
-
-.singleMeetupOnList:last-child hr {
-  visibility: hidden;
-}
-
-/*speaker list template*/
-
-.speaker-list ul {
-  margin-left: 0;
-}
-
-.speaker-list .img-user {
-  width: 64px;
-  height: auto;
-}
-
-.speaker-list .speaker-name  {
-  display: inline-block;
-  padding-left: 20px;
-}
-
-.speaker-list .speaker-link {
-  margin-bottom: 20px;
-  padding-left: 10px;
-}
-
-.speaker-list .speaker-li {
-  margin-bottom: 20px;
-}
-
-/*home - upcoming meetup styles*/
-
-.upcoming-meetup {
-  margin-top: 0;
-  border: 2px solid black;
-  padding-right: 20px;
-  padding-left: 20px;
-}
-
-.upcoming-meetup h1 {
-  margin-right: 0;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
+aside {
+  float: left;
+  width: 23%;
+  text-align: center;
+  line-height: 35px;
+  font-family: 'Museo Sans', sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: bold; }
+  aside .logo {
+    max-width: 90%;
+    margin-top: 45px;
+    text-align: center; }
 
 @media screen and (max-width: 768px) {
-  .upcoming-meetup h1 {
-    font-size: 32px;
-  }
-}
+  aside {
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px;
+    z-index: 1; }
+    aside .logo {
+      max-width: 200px; } }
+nav {
+  margin-top: 15px; }
+  nav ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0; }
+    nav ul li {
+      box-sizing: border-box;
+      margin-left: -0.4em;
+      position: relative;
+      overflow: hidden;
+      line-height: 2em;
+      font-weight: bold; }
+      nav ul li a {
+        font-size: 20px;
+        position: static;
+        padding: 0.2em 0.4em;
+        color: #393939;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden; }
+      nav ul li a:before {
+        left: 0;
+        transition: 0.1s all ease; }
+      nav ul li a:after {
+        right: 0;
+        transition: 0.1s all ease; }
+      nav ul li .vertical-bars:hover:before, nav ul li .vertical-bars:hover:after {
+        height: calc(100% + 0.4em); }
+      nav ul li .vertical-bars:hover a:before, nav ul li .vertical-bars:hover a:after {
+        width: 100%; }
+    nav ul li:before, nav ul li:after {
+      content: "";
+      box-sizing: border-box;
+      transition: 0.2s all ease;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: absolute;
+      width: 0.1rem;
+      height: 0.1rem;
+      background: #f9bf3b; }
+    nav ul li:before {
+      left: 0;
+      bottom: -0.2em; }
+    nav ul li:after {
+      right: 0;
+      top: -0.2em; }
+    nav ul li:hover:before, nav ul li:hover:after {
+      height: calc(100% + 0.4em); }
+    nav ul li:hover a:before, nav ul li:hover a:after {
+      width: 100%; }
 
-.upcoming-meetup .box-time-location {
-  margin-bottom: 30px;
+main {
+  position: relative;
+  margin-left: 25%; }
+
+@media screen and (max-width: 768px) {
+  main {
+    margin-left: 0; } }
+section {
+  margin: 50px 0; }
+
+footer {
+  margin-top: 30px;
+  font-size: 14px; }
+
+.content {
+  margin-top: 50px; }
+
+.page-title {
+  margin-bottom: 30px; }
+
+.talk-title {
+  color: #393939; }
+
+.talk-speaker {
+  color: #393939; }
+
+.img-user {
+  width: 90px;
+  height: auto; }
+
+.vertical-center {
+  display: flex;
+  align-items: center; }
+
+/* BACKGROUND IMAGES */
+@media screen and (min-width: 768px) {
+  #left-fixed-shape {
+    background: url(../img/main-left.png) no-repeat;
+    width: 250px;
+    height: 275px;
+    position: fixed;
+    left: -40px;
+    bottom: 10px;
+    z-index: -1; } }
+@media screen and (min-width: 1000px) {
+  #right-absolute-home-shape {
+    background: url(../img/main-right.png) no-repeat;
+    width: 356px;
+    height: 200px;
+    position: absolute;
+    top: 100%;
+    right: -200px; } }
+/* MAIN PAGE */
+#more-info-soon {
   width: 100%;
-}
-
-a.more {
-  color: #3498DB;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-@media screen and (max-width: 600px) {
-  a.more {
-      font-size: 18px;
-  }
-}
-
-a.more:hover {
-  color: #393939;
-}
-
-.upcoming-meetup .date-time-venue-wrapper {
-  display: inline-block;
-  width: 50%;
-  min-width: 200px;
-}
-
-.upcoming-meetup .date-time-venue-wrapper h4,
-.upcoming-meetup .date-time-venue-wrapper h5 {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-.upcoming-meetup .map-wrapper {
-  display: inline-block;
-  margin-right: 15px;
-  width: 45%;
-  min-width: 200px;
-}
-
-@media screen and (max-width: 524px) {
-  .upcoming-meetup .map-wrapper {
-    margin-bottom: 20px;
-  }
-}
-
-.upcoming-meetup .map-wrapper .map {
-  vertical-align: top;
-}
-
-div.box-users {
-  margin-bottom: 20px;
-}
-
-div.box-users .row {
-  display: inline-block;
+  border: 3px dashed #ededed;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding-right: 15px;
-  width: 50%;
-  min-width: 220px;
-}
+  margin-top: 35px; }
+  #more-info-soon p {
+    text-align: center;
+    color: #ababab;
+    margin: 0;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 54px; }
 
-@media screen and (max-width: 532px) {
-  div.box-users .row {
-    margin-bottom: 20px;
-  }
-}
+#meetup-announcement {
+  border: 2px solid black;
+  padding: 30px 20px; }
+  @media screen and (max-width: 768px) {
+    #meetup-announcement {
+      border: none; }
+      #meetup-announcement p {
+        font-size: 15px; } }
+  #meetup-announcement h1 {
+    text-align: center;
+    margin-bottom: 30px; }
+    #meetup-announcement h1 a {
+      color: #f9bf3b; }
+  #meetup-announcement h1 a:hover {
+    color: #393939; }
+  #meetup-announcement h2 {
+    text-align: center;
+    font-size: 40px;
+    margin: 40px 0px; }
+  #meetup-announcement .date-time-venue-wrapper {
+    overflow: hidden; }
+  #meetup-announcement .map {
+    width: 100%; }
+  #meetup-announcement .talk {
+    margin-bottom: 20px; }
+    #meetup-announcement .talk .speaker-img {
+      display: inline-block; }
+    #meetup-announcement .talk .talk-detail {
+      display: inline-block;
+      vertical-align: top; }
+      #meetup-announcement .talk .talk-detail p {
+        margin: 0; }
 
-.upcoming-meetup .box-users .speaker-imgs {
-  width: 100%;
-}
+#talk-proposal-landing {
+  margin-top: 25px;
+  text-align: center; }
 
-.upcoming-meetup .box-users .speaker-imgs .img-user {
+#about strong {
+  background-color: #3498DB;
+  font-size: 12px;
+  color: #ffffff;
+  padding: 3px 5px; }
+
+#sponsors .row, #partners .row {
+  margin: 30px 0; }
+#sponsors .sponsor, #partners .sponsor {
+  position: relative;
+  margin-bottom: 15px;
+  line-height: 100px;
+  text-align: center; }
+  #sponsors .sponsor .logo, #partners .sponsor .logo {
+    max-width: 75%;
+    max-height: 100px;
+    vertical-align: middle; }
+
+/* MEETUP DETAIL PAGE */
+.meetup-detail h2 {
+  margin-top: 40px; }
+.meetup-detail .row {
+  overflow: hidden; }
+.meetup-detail .time-date-detail {
+  padding-left: 10px;
+  background-color: #f9bf3b; }
+.meetup-detail .meetup-talk h2 {
+  font-size: 38px; }
+
+.localization .map {
+  width: 100%; }
+
+/* MEETUP LIST PAGE */
+.meetupList {
+  margin-top: 0;
+  padding-left: 0; }
+  .meetupList hr {
+    margin-top: 20px; }
+  .meetupList .list-of-talks {
+    overflow: hidden; }
+
+.singleMeetupOnList {
+  margin-top: 30px; }
+  .singleMeetupOnList .info {
+    overflow: hidden; }
+  .singleMeetupOnList h2 {
+    font-size: 38px;
+    margin-top: 0;
+    margin-bottom: 10px; }
+    .singleMeetupOnList h2 a {
+      color: #f9bf3b; }
+    .singleMeetupOnList h2 a:hover {
+      color: #393939; }
+  .singleMeetupOnList .talks-ul {
+    margin-top: 10px;
+    margin-bottom: 0; }
+
+/* SPEAKER LIST PAGE */
+.speaker-list img {
+  vertical-align: text-bottom; }
+.speaker-list h2 {
+  font-size: 38px; }
+.speaker-list .speaker-name {
   display: inline-block;
-  padding-right: 10px;
-  width: auto;
-  height: 64px;
-}
+  padding-left: 20px; }
+.speaker-list .speaker-link {
+  margin-bottom: 10px;
+  padding-left: 10px; }
 
-.upcoming-meetup .box-users .speaker-imgs,
-.upcoming-meetup .box-users .speaker-names,
-.upcoming-meetup .sponsors {
-  margin-left: 0;
-}
+/* SPONSOR LIST PAGE */
+.sponsor-list .img-sponsors {
+  max-width: 300px; }
 
-.upcoming-meetup .box-users .speaker-names h5 {
-  margin-bottom: 0;
-}
+/* FAQ PAGE */
+.faq-page h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 25px; }
 
-.upcoming-meetup .box-users .speaker-names a {
-  font-size: 16px;
-}
-
-.upcoming-meetup .sponsors {
-  margin-top: 20px;
-}
-
-.upcoming-meetup .sponsors * {
-  display: inline-block;
-}
-
-.upcoming-meetup .sponsors .text-sponsors {
-  margin: 0;
-  padding-right: 15px;
-  vertical-align: top;
-  font-size: 16px;
-}
-
-.upcoming-meetup .sponsors .sponsor-logo {
-  margin-bottom: 20px;
-  padding-right: 15px;
-  width: auto;
-  height: 64px;
-}
-
-.upcoming-meetup .talk-proposal-landing {
-  margin: 0 0 15px;
-}
-
-.upcoming-meetup .talk-proposal-landing,
-.upcoming-meetup .talk-proposal-landing a {
-  font-size: 16px;
-}
+/*# sourceMappingURL=style.css.map */

@@ -1,13 +1,14 @@
-{% extends "base_content.html" %}
+{% extends "base.html" %}
 
 {% load staticfiles %}
 
 {% block title %}FAQ{% endblock %}
 
-{% block og_title %}FAQ{% endblock %}
-
 {% block content %}
-<h1>FAQ</h1>
+<h1 class="page-title">FAQ</h1>
+
+<div class="faq-page">
+
 <ol class="page-menu">
     <li><a href="#for-attendees">Dla uczestników</a></li>
     <li><a href="#for-speakers">Dla prelegentów</a></li>
@@ -110,6 +111,7 @@
 {#        <li>logotyp - <a href="{% static 'marketing/pywaw_logo.png' %}" target="_blank">PNG</a>, <a href="{% static 'marketing/pywaw_logo.ai' %}" target="_blank">AI</a></li>#}
 {#        <li><a href="https://www.youtube.com/watch?v=Rrbpnrs8neM" target="_blank">video</a></li>#}
 {#    </ul>#}
+</div>
 
 </div>
 {% endblock %}

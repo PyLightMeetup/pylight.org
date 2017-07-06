@@ -18,6 +18,12 @@ class MeetupDetailView(generic.DetailView):
     model = models.Meetup
     slug_url_kwarg = slug_field = 'number'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        context['sponsors'] = models.Sponsor.objects.all()
+        context['speakers'] = models.Speaker.objects.filter(talks__in=self.object.talks.all())
+        return context
+
 
 class MeetupPromoView(generic.DetailView):
     model = models.Meetup
@@ -52,10 +58,12 @@ class MeetupsAtomFeed(MeetupsRssFeed):
 
 class SponsorListView(generic.ListView):
     model = models.Sponsor
+    context_object_name = 'sponsors'
 
 
 class SpeakerListView(generic.ListView):
     model = models.Speaker
+    context_object_name = 'speakers'
 
     def get_queryset(self):
         return super().get_queryset().filter(talks__meetup__isnull=False).distinct()
