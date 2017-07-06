@@ -1,20 +1,9 @@
-{% extends "base_content.html" %}
+{% extends "base.html" %}
 
 {% block title %}Sponsorzy{% endblock %}
 
-{% block og_title %}Sponsorzy{% endblock %}
 
-{% block subcontent %}
-    <div class="margin-bottom-large">
-        <h1>Sponsorzy</h1>
-            {% for sponsor in object_list %}
-                <div class="row-fluid sponsor-row margin-bottom-small">
-                    <div class="span12">
-                        <a href="{{ sponsor.website }}" target="_blank" class="no-hover"><img class="img-sponsors" src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}"></a>
-                        <p>{{ sponsor.description }}</p>
-                        <p></p>
-                    </div>
-                </div>
-            {% endfor %}
-    </div>
+{% block content %}
+    <h1 class="page-title">Sponsorzy</h1>
+    {% include 'meetups/_sponsors.html' %}
 {% endblock %}
