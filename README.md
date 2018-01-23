@@ -8,7 +8,9 @@ PyLight is a beginner-friendly initiative. At our meetings we would like to focu
 
 ### Contributing
 
-PyLight is all about newbie empowerment and community building. See [CONTRIBUTING](CONTRIBUTING.md) for instructions on setting up a local preview of the website.
+PyLight is all about newbie empowerment and community building. If you'd like to help out, fork this repository and create a pull request. We'll definitely take a look!
+
+See [CONTRIBUTING](CONTRIBUTING.md) for instructions on setting up a local preview of the website.
 
 ### Code of Conduct
 
