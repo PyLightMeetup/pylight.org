@@ -10,6 +10,7 @@ class Sponsor(models.Model):
     website = models.URLField()
     logo = models.ImageField(upload_to=settings.SPONSOR_LOGOS_DIR)
     description = models.TextField(blank=True)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name

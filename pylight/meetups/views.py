@@ -19,8 +19,8 @@ class MeetupDetailView(generic.DetailView):
     slug_url_kwarg = slug_field = 'number'
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data()
-        context['sponsors'] = models.Sponsor.objects.all()
+        context = super().get_context_data(**kwargs)
+        context['sponsors'] = self.object.sponsors.all() #to make universal sponsors template work, Im lazy
         context['speakers'] = models.Speaker.objects.filter(talks__in=self.object.talks.all())
         return context
 
