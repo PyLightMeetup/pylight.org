@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}Organizatorzy{% endblock %}
+
+
+{% block content %}
+    <h1 class="page-title">Organizatorzy</h1>
+    <p>Poznaj nasz zespół! Możesz spotkać nas na wydarzeniach PyLight i po drugiej stronie skrzynki <a href="mailto:hello@pylight.org">hello@pylight.org</a>.</p>
+    <p>Wszyscy pracowaliśmy z Pythonem, niektórzy przez kilkanaście lat. Część z nas doszła do pracy w IT okrężną drogą. Połączyły nas chęci wspólnego uczenia się i umożliwienie innym podnoszenia kompetencji informatycznych.</p>
+    <p>Chcemy, by spotkania PyLight były okazją dla rozwoju i szansą budowania społeczności uczących się i praktyków Pythona. Dbamy o to, by uczestnicy naszych wydarzeń doświadczali życzliwej, bezpiecznej i przyjaznej atmosfery.</p>
+    <p>Podejdź do nas po spotkaniu i opowiedz nam przy pizzy swoje wrażenia z prezentacji, czym się zajmujesz albo jaka jest twoja ulubiona potrawa z ziemniaka.</p>
+
+    {% for organizer in organizers %}
+    <div class="organizer" style="display:inline-block; width:32%; text-align:center; vertical-align: top;">
+        <img src="{% if organizer.photo %}{{ organizer.photo.url }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="{{ organizer }}" class="img-user">
+        <p>{{ organizer.first_name }} {{ organizer.last_name }}</p>
+    </div>
+    {% endfor %}
+
+
+{% endblock %}

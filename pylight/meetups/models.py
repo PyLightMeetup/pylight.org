@@ -128,3 +128,16 @@ class TalkProposal(models.Model):
 
     def __str__(self):
         return 'Proposal: {}'.format(self.talk)
+
+
+class Organizer(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    photo = models.ImageField(
+        upload_to=SlugifyUploadTo(settings.SPEAKER_PHOTOS_DIR, ['first_name', 'last_name']),
+        blank=True,
+    )
+    biography = models.TextField(blank=True)
+
+    def __str__(self):
+        return '{} {}'.format(self.first_name, self.last_name)

@@ -94,3 +94,10 @@ class TalkProposalCreateView(generic.CreateView):
 
 class TalkProposalConfirmationView(generic.TemplateView):
     template_name = 'meetups/talkproposal_confirmation.html'
+
+
+class OrganizersListView(generic.ListView):
+    model = models.Organizer
+    context_object_name = 'organizers'
+    template_name = 'meetups/organizer_list.html'
+    ordering = ["?"]
