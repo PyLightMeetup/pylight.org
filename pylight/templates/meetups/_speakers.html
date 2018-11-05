@@ -4,7 +4,7 @@
         {% for speaker in speakers %}
         <div id="speaker-{{ speaker.id }}" class="speaker">
             <div class="speaker-photo-name">
-                <img  src="{% if speaker.photo %}{{ speaker.photo.url }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="Zdjecie {{ speaker }}" class="img-user">
+                <img  src="{% if speaker.photo %}{{ speaker.photo.url }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="{{ speaker }}" class="img-user">
                 <h2 class="speaker-name">{{ speaker.first_name }} {{ speaker.last_name }}</h2>
                 {% if speaker.website %}
                 <a href="{{ speaker.website }}" target="_blank" class="link-gray"><img src="{% static 'img/link.png' %}" alt="Strona prelegenta" class="speaker-link"></a>{% endif %}
