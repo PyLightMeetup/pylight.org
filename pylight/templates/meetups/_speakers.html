@@ -1,17 +1,20 @@
 {% load staticfiles %}
 
-<div class="speaker-list">
-        {% for speaker in speakers %}
-        <div id="speaker-{{ speaker.id }}" class="speaker">
-            <div class="speaker-photo-name">
-                <img  src="{% if speaker.photo %}{{ speaker.photo.url }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="Zdjecie {{ speaker }}" class="img-user">
-                <h2 class="speaker-name">{{ speaker.first_name }} {{ speaker.last_name }}</h2>
-                {% if speaker.website %}
-                <a href="{{ speaker.website }}" target="_blank" class="link-gray"><img src="{% static 'img/link.png' %}" alt="Strona prelegenta" class="speaker-link"></a>{% endif %}
-            </div>
-            <p class="speaker-bio">{{ speaker.biography }}</p>
+<div>
+    {% for speaker in speakers %}
+    <div id="speaker-{{ speaker.id }}">
+        <div>
+            <img  src="{% if speaker.photo %}{{ speaker.photo.url }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="Zdjecie {{ speaker }}">
+            <h2>{{ speaker.first_name }} {{ speaker.last_name }}</h2>
+            {% if speaker.website %}
+                <a href="{{ speaker.website }}" target="_blank">
+                    <img src="{% static 'img/link.png' %}" alt="Strona prelegenta">
+                </a>
+            {% endif %}
         </div>
-        {% empty %}
-            <p>Agenda w przygotowaniu. Masz pomysł na prezentację? Napisz do nas: <a href="mailto:hello@pylight.org">hello@pylight.org</a></p>
-        {% endfor %}
+        <p>{{ speaker.biography }}</p>
+    </div>
+    {% empty %}
+        <p>Agenda w przygotowaniu. Masz pomysł na prezentację? Napisz do nas: <a href="mailto:hello@pylight.org">hello@pylight.org</a></p>
+    {% endfor %}
 </div>

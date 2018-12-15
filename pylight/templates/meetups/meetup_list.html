@@ -4,12 +4,12 @@
 
 
 {% block content %}
-<h1 class="page-title">Spotkania</h1>
+<h1>Spotkania</h1>
 
-<div class="meetupList">
+<div>
     {% for meetup in object_list %}
-    <div class="singleMeetupOnList" itemscope itemtype="http://schema.org/Event">
-        <div class="info">
+    <div itemscope itemtype="http://schema.org/Event">
+        <div>
             <div>
                 <h2 itemprop="name">
                     <a href="{% url 'meetups:meetup_detail' number=meetup.number %}" itemprop="sameAs">
@@ -22,9 +22,9 @@
             </div>
         </div>
 
-        <div class="list-of-talks">
+        <div>
             <div>
-                <ul class="talks-ul">
+                <ul>
                     {% for talk in meetup.talks.all %}
                         <li itemprop="subEvent" itemscope itemtype="http://schema.org/Event">
                             {% for speaker in talk.speakers.all %}<strong itemprop="performer" itemscope itemtype="http://schema.org/Person"><a class="talk-speaker" href="{{ meetup.get_absolute_url }}#speaker-{{ speaker|slugify }}" target="_blank" itemprop="name">{{ speaker }}</a>{% if not forloop.last %}, {% endif %}</strong>{% endfor %}: <a class="talk-title" href="{{ meetup.get_absolute_url }}#talk-{{ talk.title|slugify }}" itemprop="name">{{ talk.title }}</a>

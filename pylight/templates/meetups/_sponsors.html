@@ -1,7 +1,7 @@
-<div class="sponsor-list">
+<div>
     {% for sponsor in sponsors %}
         <a href="{{ sponsor.website }}" target="_blank" class="no-hover">
-            <img class="img-sponsors" src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
+            <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}">
         </a>
         <p>{{ sponsor.description }}</p>
     {% endfor %}

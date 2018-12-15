@@ -7,14 +7,14 @@
         </a>
     </h1>
 
-    <div class="date-time-venue-wrapper">
+    <div>
         <div>
             <a href="https://maps.google.com/maps?q={{ upcoming_meetup.venue.latitude }},{{ upcoming_meetup.venue.longitude }}" target="_blank">
                 <img class="map" src="http://maps.googleapis.com/maps/api/staticmap?zoom=15&amp;size=460x189&amp;maptype=roadmap&amp;markers=color:blue%7C{{ upcoming_meetup.venue.latitude }},{{ upcoming_meetup.venue.longitude }}&amp;sensor=false&amp;key=AIzaSyBmPw3YAF_Qk3GTLbj2zkF-M-rIcT45y2Q" class="map" alt="Mapa">
             </a>
         </div>
 
-        <div class="date-and-localization">
+        <div>
             <p>
                 {{ upcoming_meetup.date|date:"l" }},
                 {{ upcoming_meetup.date|date:"d.m.Y" }}, godz. {{ upcoming_meetup.date|date:"H:i" }}
@@ -23,7 +23,7 @@
             <p>
                 <img src="{% static 'img/location.png' %}" alt="Lokalizacja" class="icon-location-home"> {{ upcoming_meetup.venue.name }}, {{ upcoming_meetup.venue.address }}
             </p>
-            <div class="more-wrapper">
+            <div>
                 <a href="{{ upcoming_meetup.get_absolute_url }}" class="more">&raquo; WIĘCEJ INFORMACJI</a>
             </div>
             {% endif %}
@@ -35,38 +35,29 @@
     <div>
         {% for talk in upcoming_meetup.talks.all %}
         <div>
-            <div class="talk">
-                <div class="speaker-img">
-                    {% if talk.speakers.count == 1 %}
-                        <img src="{% if talk.speakers.get.photo %}{{ talk.speakers.get.photo.url }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="Zdjęcie {{ speaker }}" class="img-user">
-                    {% else %}
-                        {% for speaker in talk.speakers.all %}
-                            <img src="{% if speaker.photo %}{{ speaker.photo.url }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="Zdjęcie {{ speaker }}" class="img-user">
-                        {% endfor %}
-                    {% endif %}
-                </div>
+            {% if talk.speakers.count == 1 %}
+                <img src="{% if talk.speakers.get.photo %}{{ talk.speakers.get.photo.url }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="Zdjęcie {{ speaker }}">
+            {% else %}
+                {% for speaker in talk.speakers.all %}
+                    <img src="{% if speaker.photo %}{{ speaker.photo.url }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="Zdjęcie {{ speaker }}">
+                {% endfor %}
+            {% endif %}
+        </div>
 
-                <div class="talk-detail">
-                    <p>
-                        {% for speaker in talk.speakers.all %}
-                            <a class="talk-speaker" href="{{ upcoming_meetup.get_absolute_url }}#speaker-{{ speaker|slugify }}">{{ speaker }}</a>{% if not forloop.last %}, {% endif %}
-                        {% endfor %}
-                    </p>
-                    <p><a class="talk-title" href="{{ upcoming_meetup.get_absolute_url }}#talk-{{ talk|slugify }}">{{ talk.title }}</a></p>
-                </div>
-            </div>
+        <div>
+            <p>
+                {% for speaker in talk.speakers.all %}
+                    <a href="{{ upcoming_meetup.get_absolute_url }}#speaker-{{ speaker|slugify }}">{{ speaker }}</a>{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+            <p><a href="{{ upcoming_meetup.get_absolute_url }}#talk-{{ talk|slugify }}">{{ talk.title }}</a></p>
         </div>
         {% endfor %}
     </div>
 
     {% if not upcoming_meetup.is_ready %}
-        <div>
-            <div>
-                <div class="more-info">
-                    <p>agenda w przygotowaniu<p>
-                </div>
-            </div>
+        <div class="more-info">
+            <p>agenda w przygotowaniu<p>
         </div>
     {% endif %}
-
 </div>

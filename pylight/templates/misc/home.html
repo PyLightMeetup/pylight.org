@@ -6,9 +6,9 @@
 {% block content %}
 
 <section id="upcoming-meetup">
-  {% if upcoming_meetup %}
-      {%  include 'misc/_meetup.html' %}
-  {% else %}
+    {% if upcoming_meetup %}
+        {%  include 'misc/_meetup.html' %}
+    {% else %}
   <h1>Następne spotkanie</h1>
   <div id="more-info-soon">
     <p>spotkanie w przygotowaniu</p>
@@ -21,24 +21,24 @@
 </section>
 
 <section id="about">
-  <h2>O PyLight</h2>
-  <div class="about-pl">
-    <p><strong>PL</strong> PyLight to inicjatywa nastawiona na początkujące programistki i początkujących programistów. Na naszych spotkaniach skupiamy się na zrozumieniu podstawowych założeń programowania, kreatywnym rozwiązywaniu problemów i pokazaniu różnych możliwości rozwoju w IT. Nasze spotkania, w formie nauki przez działanie, odbywają się raz w miesiącu. Przyjdźcie i przekonajcie się sami!</p>
-  </div>
-  <div class="about-en">
-    <p><strong>EN</strong> PyLight is a beginner-friendly initiative. On our meetings we would like to focus on thorough explanation of programming foundations, showing different approaches in problem solving, and exploring different branches of IT world. Our meetings take place once a month and always include practical tasks apart from lectures. Feel free to join us anytime!</p>
-  </div>
+    <h2>O PyLight</h2>
+    <div class="about-pl">
+        <p><strong>PL</strong> PyLight to inicjatywa nastawiona na początkujące programistki i początkujących programistów. Na naszych spotkaniach skupiamy się na zrozumieniu podstawowych założeń programowania, kreatywnym rozwiązywaniu problemów i pokazaniu różnych możliwości rozwoju w IT. Nasze spotkania, w formie nauki przez działanie, odbywają się raz w miesiącu. Przyjdźcie i przekonajcie się sami!</p>
+    </div>
+    <div class="about-en">
+        <p><strong>EN</strong> PyLight is a beginner-friendly initiative. On our meetings we would like to focus on thorough explanation of programming foundations, showing different approaches in problem solving, and exploring different branches of IT world. Our meetings take place once a month and always include practical tasks apart from lectures. Feel free to join us anytime!</p>
+    </div>
 </section>
 
 <section id="sponsors">
   <h2>Sponsorzy</h2>
 
   {% for chunk in sponsors|chunkify:2 %}
-    <div class="vertical-center">
+    <div>
     {% for sponsor in chunk %}
-        <div class="sponsor">
+        <div>
             <a href="{{ sponsor.website }}" target="_blank">
-                <img class="logo" src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}">
+                <img src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}">
             </a>
         </div>
     {% endfor %}
@@ -50,9 +50,9 @@
   <h2>Partnerzy</h2>
 
   {% for chunk in partners|chunkify:3 %}
-    <div class="vertical-center">
+    <div>
     {% for partner in chunk %}
-        <div class="sponsor">
+        <div>
             <a href="{{ partner.url }}" target="_blank">
                 <img class="logo" src="{{ partner.logo.url }}" alt="{{ partner.name }}" title="{{ partner.name }}">
             </a>
