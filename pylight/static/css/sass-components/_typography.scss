@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&subset=latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Lora:400i&subset=latin-ext');
 
+body {
+    background: $white;
+    color: $black;
+    line-height: 2em;
+    font-family: $font-secondary;
+    font-size: 18px;
+}
+
 a {
     color: $blue;
     transition: 0.5s color ease;
