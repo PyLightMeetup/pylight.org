@@ -1,0 +1,195 @@
+
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background: $white;
+    color: $black;
+    line-height: 2em;
+    font-family: $font-secondary;
+    font-size: 18px;
+}
+
+aside {
+    float: left;
+    width: 23%;
+    text-align: center;
+    line-height: 35px;
+    font-family: 'Museo Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: bold;
+
+
+    .logo {
+        max-width: 90%;
+        margin-top: 45px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    aside {
+        position: relative;
+        width: 100%;
+        margin-bottom: 50px;
+        z-index: 1;
+
+        .logo {
+            max-width: 200px;
+        }
+    }
+}
+
+nav {
+    margin-top: 15px;
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+
+        li {
+            box-sizing: border-box;
+            margin-left: -0.4em;
+            position: relative;
+            overflow: hidden;
+            line-height: 2em;
+            font-weight: bold;
+
+            a {
+                font-size: 20px;
+                position: static;
+                padding: 0.2em 0.4em;
+                color: $black;
+                -webkit-backface-visibility: hidden;
+                -moz-backface-visibility: hidden;
+                -o-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+
+            a:before {
+                left: 0;
+                transition: 0.1s all ease;
+            }
+
+             a:after{
+                right: 0;
+                transition: 0.1s all ease;
+            }
+
+            .vertical-bars:hover:before, .vertical-bars:hover:after {
+                height: calc(100% + 0.4em);
+            }
+
+            .vertical-bars:hover a:before, .vertical-bars:hover a:after{
+                width: 100%;
+            }
+        }
+
+        li:before, li:after {
+            content: "";
+            box-sizing: border-box;
+            transition: 0.2s all ease;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            backface-visibility: hidden;
+            position: absolute;
+            width: 0.1rem;
+            height: 0.1rem;
+            background: $yellow;
+        }
+
+        li:before {
+            left: 0;
+            bottom: -0.2em;
+        }
+
+        li:after {
+            right: 0;
+            top: -0.2em;
+        }
+
+        li:hover:before, li:hover:after {
+            height: calc(100% + 0.4em);
+        }
+
+        li:hover a:before, li:hover a:after{
+            width: 100%;
+        }
+    }
+}
+
+main {
+    position: relative;
+    margin-left: 25%;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        margin-left: 0;
+    }
+}
+
+section {
+    margin: 50px 0;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.content {
+    margin-top: 50px;
+}
+
+.page-title {
+    margin-bottom: 30px;
+}
+
+.talk-title {
+    color: $black;
+}
+
+.talk-speaker {
+    color: $black;
+}
+
+.img-user {
+        width: 90px;
+        height: auto;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+}
+
+/* BACKGROUND IMAGES */
+@media screen and (min-width: 768px) {
+  #left-fixed-shape {
+      background: url(../img/main-left.png) no-repeat;
+      width: 250px;
+      height: 275px;
+      position: fixed;
+      left: -40px;
+      bottom: 10px;
+      z-index: -1;
+      }
+}
+
+@media screen and (min-width: 1000px) {
+  #right-absolute-home-shape {
+      background: url(../img/main-right.png) no-repeat;
+      width: 356px;
+      height: 200px;
+      position: absolute;
+      top: 100%;
+      right: -200px;
+    }
+}
