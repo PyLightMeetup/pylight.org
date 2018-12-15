@@ -7,14 +7,14 @@
         </a>
     </h1>
 
-    <div class="row date-time-venue-wrapper">
-        <div class="col-md-6">
+    <div class="date-time-venue-wrapper">
+        <div>
             <a href="https://maps.google.com/maps?q={{ upcoming_meetup.venue.latitude }},{{ upcoming_meetup.venue.longitude }}" target="_blank">
                 <img class="map" src="http://maps.googleapis.com/maps/api/staticmap?zoom=15&amp;size=460x189&amp;maptype=roadmap&amp;markers=color:blue%7C{{ upcoming_meetup.venue.latitude }},{{ upcoming_meetup.venue.longitude }}&amp;sensor=false&amp;key=AIzaSyBmPw3YAF_Qk3GTLbj2zkF-M-rIcT45y2Q" class="map" alt="Mapa">
             </a>
         </div>
 
-        <div class="col-md-6 date-and-localization">
+        <div class="date-and-localization">
             <p>
                 {{ upcoming_meetup.date|date:"l" }},
                 {{ upcoming_meetup.date|date:"d.m.Y" }}, godz. {{ upcoming_meetup.date|date:"H:i" }}
@@ -23,7 +23,7 @@
             <p>
                 <img src="{% static 'img/location.png' %}" alt="Lokalizacja" class="icon-location-home"> {{ upcoming_meetup.venue.name }}, {{ upcoming_meetup.venue.address }}
             </p>
-            <div class='more-wrapper'>
+            <div class="more-wrapper">
                 <a href="{{ upcoming_meetup.get_absolute_url }}" class="more">&raquo; WIĘCEJ INFORMACJI</a>
             </div>
             {% endif %}
@@ -32,9 +32,9 @@
 
     <h2>Prezentacje</h2>
 
-    <div class="row">
+    <div>
         {% for talk in upcoming_meetup.talks.all %}
-        <div class="col-md-6">
+        <div>
             <div class="talk">
                 <div class="speaker-img">
                     {% if talk.speakers.count == 1 %}
@@ -60,8 +60,8 @@
     </div>
 
     {% if not upcoming_meetup.is_ready %}
-        <div class="row">
-            <div class="col-sm-12">
+        <div>
+            <div>
                 <div class="more-info">
                     <p>agenda w przygotowaniu<p>
                 </div>

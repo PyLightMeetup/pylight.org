@@ -34,9 +34,9 @@
   <h2>Sponsorzy</h2>
 
   {% for chunk in sponsors|chunkify:2 %}
-    <div class="row vertical-center">
+    <div class="vertical-center">
     {% for sponsor in chunk %}
-        <div class="sponsor col-md-6">
+        <div class="sponsor">
             <a href="{{ sponsor.website }}" target="_blank">
                 <img class="logo" src="{{ sponsor.logo.url }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}">
             </a>
@@ -50,9 +50,9 @@
   <h2>Partnerzy</h2>
 
   {% for chunk in partners|chunkify:3 %}
-    <div class="row vertical-center">
+    <div class="vertical-center">
     {% for partner in chunk %}
-        <div class="sponsor col-md-3">
+        <div class="sponsor">
             <a href="{{ partner.url }}" target="_blank">
                 <img class="logo" src="{{ partner.logo.url }}" alt="{{ partner.name }}" title="{{ partner.name }}">
             </a>

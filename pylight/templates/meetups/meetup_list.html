@@ -9,21 +9,21 @@
 <div class="meetupList">
     {% for meetup in object_list %}
     <div class="singleMeetupOnList" itemscope itemtype="http://schema.org/Event">
-        <div class="row info">
-            <div class="col-md-6">
+        <div class="info">
+            <div>
                 <h2 itemprop="name">
                     <a href="{% url 'meetups:meetup_detail' number=meetup.number %}" itemprop="sameAs">
                         {{ meetup }}
                     </a>
                 </h2>
             </div>
-            <div class="col-md-6">
+            <div>
                 <p itemprop="startDate" content="{{ meetup.date|date:"c" }}">{{ meetup.date|date:"d.m.Y" }}</p>
             </div>
         </div>
 
-        <div class="row list-of-talks">
-            <div class="col-md-12">
+        <div class="list-of-talks">
+            <div>
                 <ul class="talks-ul">
                     {% for talk in meetup.talks.all %}
                         <li itemprop="subEvent" itemscope itemtype="http://schema.org/Event">

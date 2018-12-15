@@ -15,14 +15,13 @@
         <meta property="og:image" content="{% static 'img/logo.png' %}" />
 
         <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}" />
-        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
     </head>
     <body>
         <div id="left-fixed-shape"></div>
         {% block right_shape %}<div id="right-absolute-home-shape"></div>{% endblock %}
-        <div class="container">
+        <div>
             <aside>
               <a href="{% url 'misc:home' %}">
                   <img src="{% static 'img/logo.png' %}" alt="PyLight" class="logo" />
