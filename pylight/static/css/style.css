@@ -1231,7 +1231,6 @@ template {
   }
 }
 body {
-  background: #ffffff;
   color: #393939;
   line-height: 2em;
   font-family: "Raleway", sans-serif;
@@ -1250,34 +1249,24 @@ a:hover {
 
 h1, h2, h3, h4, h5 {
   font-family: "Exo", sans-serif;
+  margin-bottom: 60px;
 }
 
-h1, h2 {
+h1 {
   font-size: 45px;
 }
 
-h3 {
-  font-size: 18px;
+h2 {
+  font-size: 38px;
 }
 
-h6 {
-  text-transform: uppercase;
-  font-size: 16px;
-  letter-spacing: 2px;
-  font-weight: bold;
-  margin-top: 25px;
+h3 {
+  font-size: 20px;
 }
 
 p {
-  margin-bottom: 0.5em;
-}
-p .date.strong {
-  background-color: #f9bf3b;
-  color: #393939;
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 17px;
-  padding: 3px 5px;
+  margin-top: 15px;
+  margin-bottom: 30px;
 }
 
 html {
