@@ -6,7 +6,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 @import url("https://fonts.googleapis.com/css?family=Raleway&subset=latin-ext");
-@import url("https://fonts.googleapis.com/css?family=Lora:400i&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Exo:300,400&subset=latin-ext");
 html {
   line-height: 1.15;
   /* 1 */
@@ -1249,7 +1249,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: "Lora", serif;
+  font-family: "Exo", sans-serif;
 }
 
 h1, h2 {
