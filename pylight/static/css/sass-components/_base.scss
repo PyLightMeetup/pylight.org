@@ -3,91 +3,97 @@ html {
 }
 
 .logo {
-    max-width: 90%;
-    margin-top: 45px;
-    text-align: center;
-
-    @media screen and (max-width: 768px) {
-        max-width: 200px;
+    height: 100px;
+    width: auto;
+    
+    @media screen and (min-width: $medium) {
+        margin-top: $small-spacing;
+        margin-left: $medium-spacing;
     }
 }
 
 nav {
-    margin-top: 15px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    box-shadow: $box-shadow;
 
     ul {
+        height: 100%;
+        width: 100%;
+        max-width: 700px;
+        margin: auto;
+        padding: 0 $small-spacing $medium-spacing;
+        justify-self: center;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
         list-style-type: none;
-        padding-left: 0;
-        margin: 0;
+        box-sizing: border-box;
+    }
+}
 
-        li {
-            box-sizing: border-box;
-            margin-left: -0.4em;
-            position: relative;
-            overflow: hidden;
-            line-height: 2em;
-            font-weight: bold;
+.nav-item {
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
 
-            a {
-                font-size: 20px;
-                position: static;
-                padding: 0.2em 0.4em;
-                color: $black;
-                -webkit-backface-visibility: hidden;
-                -moz-backface-visibility: hidden;
-                -o-backface-visibility: hidden;
-                backface-visibility: hidden;
-            }
+    &:before,
+    &:after {
+        content: "";
+        box-sizing: border-box;
+        transition: 0.2s all ease;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+        position: absolute;
+        width: 0.1rem;
+        height: 0.1rem;
+        background: $yellow;
+    }
 
-            a:before {
-                left: 0;
-                transition: 0.1s all ease;
-            }
+    &:before {
+        left: 0;
+        bottom: -0.2em;
+    }
 
-             a:after{
-                right: 0;
-                transition: 0.1s all ease;
-            }
+    &:after {
+        right: 0;
+        top: -0.2em;
+    }
 
-            .vertical-bars:hover:before, .vertical-bars:hover:after {
-                height: calc(100% + 0.4em);
-            }
+    &:hover:before,
+    &:hover:after {
+        height: calc(100% + 0.4em);
+    }
 
-            .vertical-bars:hover a:before, .vertical-bars:hover a:after{
-                width: 100%;
-            }
+    &:hover a:before,
+    &:hover a:after{
+        width: 100%;
+    }
+
+    a {
+        padding: 0.2em 0.6em;
+        color: $black;
+        text-decoration: none;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+        &:before,
+        &:after {
+            transition: $transition-fast;
         }
 
-        li:before, li:after {
-            content: "";
-            box-sizing: border-box;
-            transition: 0.2s all ease;
-            -webkit-backface-visibility: hidden;
-            -moz-backface-visibility: hidden;
-            -o-backface-visibility: hidden;
-            backface-visibility: hidden;
-            position: absolute;
-            width: 0.1rem;
-            height: 0.1rem;
-            background: $yellow;
-        }
-
-        li:before {
+        &:before {
             left: 0;
-            bottom: -0.2em;
         }
 
-        li:after {
+        &:after{
             right: 0;
-            top: -0.2em;
-        }
-
-        li:hover:before, li:hover:after {
-            height: calc(100% + 0.4em);
-        }
-
-        li:hover a:before, li:hover a:after{
-            width: 100%;
         }
     }
 }

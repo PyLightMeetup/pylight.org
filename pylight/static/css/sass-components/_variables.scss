@@ -12,7 +12,8 @@ $big-spacing: 60px;
 
 $box-shadow: 3px 3px 33px 0px rgba(0,0,0,0.22);
 
-$transition: all 2s;
+$transition-slow: 2s all ease;
+$transition-fast: 0.1s all ease;
 
 $small: 576px;
 $medium: 768px;

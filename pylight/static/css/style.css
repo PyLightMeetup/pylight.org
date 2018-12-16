@@ -1274,57 +1274,43 @@ html {
 }
 
 .logo {
-  max-width: 90%;
-  margin-top: 45px;
-  text-align: center;
+  height: 100px;
+  width: auto;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .logo {
-    max-width: 200px;
+    margin-top: 15px;
+    margin-left: 30px;
   }
 }
 
 nav {
-  margin-top: 15px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  box-shadow: 3px 3px 33px 0px rgba(0, 0, 0, 0.22);
 }
 nav ul {
+  height: 100%;
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  padding: 0 15px 30px;
+  justify-self: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
   list-style-type: none;
-  padding-left: 0;
-  margin: 0;
-}
-nav ul li {
   box-sizing: border-box;
-  margin-left: -0.4em;
+}
+
+.nav-item {
+  box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  line-height: 2em;
-  font-weight: bold;
+  text-transform: uppercase;
 }
-nav ul li a {
-  font-size: 20px;
-  position: static;
-  padding: 0.2em 0.4em;
-  color: #393939;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-nav ul li a:before {
-  left: 0;
-  transition: 0.1s all ease;
-}
-nav ul li a:after {
-  right: 0;
-  transition: 0.1s all ease;
-}
-nav ul li .vertical-bars:hover:before, nav ul li .vertical-bars:hover:after {
-  height: calc(100% + 0.4em);
-}
-nav ul li .vertical-bars:hover a:before, nav ul li .vertical-bars:hover a:after {
-  width: 100%;
-}
-nav ul li:before, nav ul li:after {
+.nav-item:before, .nav-item:after {
   content: "";
   box-sizing: border-box;
   transition: 0.2s all ease;
@@ -1337,19 +1323,37 @@ nav ul li:before, nav ul li:after {
   height: 0.1rem;
   background: #f9bf3b;
 }
-nav ul li:before {
+.nav-item:before {
   left: 0;
   bottom: -0.2em;
 }
-nav ul li:after {
+.nav-item:after {
   right: 0;
   top: -0.2em;
 }
-nav ul li:hover:before, nav ul li:hover:after {
+.nav-item:hover:before, .nav-item:hover:after {
   height: calc(100% + 0.4em);
 }
-nav ul li:hover a:before, nav ul li:hover a:after {
+.nav-item:hover a:before, .nav-item:hover a:after {
   width: 100%;
+}
+.nav-item a {
+  padding: 0.2em 0.6em;
+  color: #393939;
+  text-decoration: none;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.nav-item a:before, .nav-item a:after {
+  transition: 0.1s all ease;
+}
+.nav-item a:before {
+  left: 0;
+}
+.nav-item a:after {
+  right: 0;
 }
 
 main {
