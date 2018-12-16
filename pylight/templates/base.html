@@ -21,39 +21,34 @@
     <body>
         <div id="left-fixed-shape"></div>
         {% block right_shape %}<div id="right-absolute-home-shape"></div>{% endblock %}
-        <div>
-            <aside>
-                <a href="{% url 'misc:home' %}">
-                    <img src="{% static 'img/logo.png' %}" alt="PyLight" class="logo" />
-                </a>
-                <nav>
-                    <ul>
-                        <li class="vertical-bars"><a href="{% url 'misc:home' %}">Home</a></li>
-                        <li class="vertical-bars"><a href="{% url 'meetups:meetup_list' %}">Spotkania</a></li>
-                        <li class="vertical-bars"><a href="{% url 'meetups:speaker_list' %}">Prelegenci</a></li>
-                        <li class="vertical-bars"><a href="{% url 'meetups:sponsor_list' %}">Sponsorzy</a></li>
-                        <li class="vertical-bars"><a href="{% url 'misc:faq' %}">FAQ</a></li>
-                  </ul>
-                </nav>
-            </aside>
-            <main>
-                {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                        <li class="{{ message.tags }}">
-                            {{ message }}
-                        </li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-                <div class="content">
-                    {% block content %}{% endblock %}
-                </div>
-                <footer>
-                    <p>Społeczność PyLight zobowiązuje się przestrzegać <a href="http://berlincodeofconduct.org/pl/">berlińskiego kodeksu postępowania</a>.</p>
-                </footer>
-            </main>
-        </div>
+        <nav>
+            <a href="{% url 'misc:home' %}">
+                <img src="{% static 'img/logo.png' %}" alt="PyLight" class="logo" />
+            </a>
+            <ul>
+                <li class="vertical-bars"><a href="{% url 'misc:home' %}">Home</a></li>
+                <li class="vertical-bars"><a href="{% url 'meetups:meetup_list' %}">Spotkania</a></li>
+                <li class="vertical-bars"><a href="{% url 'meetups:speaker_list' %}">Prelegenci</a></li>
+                <li class="vertical-bars"><a href="{% url 'meetups:sponsor_list' %}">Sponsorzy</a></li>
+                <li class="vertical-bars"><a href="{% url 'misc:faq' %}">FAQ</a></li>
+            </ul>
+        </nav>
+        <main>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">
+                        {{ message }}
+                    </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% block content %}{% endblock %}
+        </main>
+        <footer>
+            <p>Społeczność PyLight zobowiązuje się przestrzegać <a href="http://berlincodeofconduct.org/pl/">berlińskiego kodeksu postępowania</a>.</p>
+        </footer>
         <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
     </body>
 </html>
