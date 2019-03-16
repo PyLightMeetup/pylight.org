@@ -1,4 +1,4 @@
-Django==1.8.18
+django>=1.11.18
 Pillow==2.9.0
 factory_boy==2.5.2
 djet==0.0.10
