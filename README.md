@@ -16,6 +16,11 @@ See [CONTRIBUTING](CONTRIBUTING.md) for instructions on setting up a local previ
 
 We have signed the [Berlin Code of Conduct](http://berlincodeofconduct.org/).
 
+### How to contribute
+
+For detailed description how to run this project locally see CONTRIBUTING.md
+Pull requests are welcomed!
+
 ### Credits
 
 Big thanks to [http://pywaw.org](PyWaw) for open-sourcing their website and for their support!
