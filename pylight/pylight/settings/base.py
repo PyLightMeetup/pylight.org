@@ -160,13 +160,6 @@ LOGGING = {
     }
 }
 
-TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    'django.core.context_processors.request',
-    'misc.context_processors.system_info',
-    'misc.context_processors.current_site',
-    'meetups.context_processors.stats',
-)
-
 MEETUP_NAME = 'PyLight'
 
 TALK_PROPOSAL_RECIPIENTS = ['hello@pylight.org']

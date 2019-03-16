@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+djet = "==0.0.10"
+django-embed-video = "==1.1.2"
+dj-database-url = "==0.4.2"
+whitenoise = "==3.3.0"
+django-db-storage = "==1.0.2"
+"psycopg2" = "==2.7.4"
+gunicorn = "==19.7.1"
+Django = "==1.11.18"
+Pillow = "==2.9.0"
+factory_boy = "==2.5.2"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
