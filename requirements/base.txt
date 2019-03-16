@@ -1,8 +1,0 @@
-django>=1.11.18
-Pillow==2.9.0
-factory_boy==2.5.2
-djet==0.0.10
-django-embed-video==1.1.2
-dj-database-url==0.4.2
-whitenoise==3.3.0
-django-db-storage==1.0.2
